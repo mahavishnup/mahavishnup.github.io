@@ -626,32 +626,12 @@
 						document.body.scrollTop = 0;
 						document.documentElement.scrollTop = 0;
 					}
-      </script>
+      </script> 
     
-
-    <script>
-      function getParams(){
-          var idx = document.URL.indexOf('?');
-          var params = new Array();
-          if (idx != -1) {
-              var pairs = document.URL.substring(idx+1, document.URL.length).split('&');
-              for (var i=0; i<pairs.length; i++){
-                  nameVal = pairs[i].split('=');
-                  params[nameVal[0]] = nameVal[1];
-              }
-          }
-          return params;
-      }
-      params = getParams();
-      name = unescape(params["name"]);
-      email = unescape(params["email"]);
-      message = unescape(params["message"]);
-      window.open('https://api.whatsapp.com/send?phone=+919751294297&text=NAME : '
-      + name +',\n EMAIL : '+ email +',\n MESSAGE : '+ message +'');
-    </script>
 
     <script src="./resources/js/jquery.min.js"></script>
     <script src="./resources/js/respond.min.js"></script>
+    <script src="./resources/js/whatsapp.js"></script>
     <script src="./resources/js/html5shiv.min.js"></script>
     <script src="./resources/js/selectivizr.min.js"></script>
     <script src="vendors/js/jquery.waypoints.min.js"></script>
