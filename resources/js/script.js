@@ -130,7 +130,7 @@ $(document).ready(function() {
 			var self = this;
 			self.timer = setInterval(function() {
 				self.run();	
-			}, 0);
+			}, 50);
 		},
 		run: function() {
 			var self = this;
@@ -186,7 +186,7 @@ $(document).ready(function() {
 						clearInterval( timer );
 				} 
 				
-			}, self.tick * 1000);
+			}, self.tick * 5000);
 				
 		}
 	};
