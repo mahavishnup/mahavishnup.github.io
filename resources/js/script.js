@@ -18,8 +18,8 @@ $(document).ready(function() {
        $('html, body').animate({scrollTop: $('.js--scroll-follow').offset().top}, 5000); 
     });
     
-    $('.js--scroll-to-Download').click(function () {
-       $('html, body').animate({scrollTop: $('.js--section-Download').offset().top}, 1000); 
+    $('.js--scroll-to-top').click(function () {
+       $('html, body').animate({scrollTop: $('.js--section-top').offset().top}, 3000); 
     });
     
     
