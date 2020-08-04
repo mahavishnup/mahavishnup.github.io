@@ -43,31 +43,6 @@ Orange color: #e67e22
     opacity: 0.5;
     text-decoration: none;
   }
-/*--/ Scrolltop s /--*/
-
-.scrolltop-mf {
-    position: relative;
-    display: none;
-  }
-  
-  .scrolltop-mf span {
-    z-index: 999;
-    position: fixed;
-    width: 42px;
-    height: 42px;
-    background-color: #f70002;
-    opacity: .7;
-    font-size: 1.6rem;
-    line-height: 1.5;
-    text-align: center;
-    color: #fff;
-    top: auto;
-    left: auto;
-    right: 30px;
-    bottom: 50px;
-    cursor: pointer;
-    border-radius: 50%;
-  }
   
   /* Back to top button */
   
@@ -82,9 +57,10 @@ Orange color: #e67e22
     line-height: 1;
     font-size: 16px;
     border-radius: 50%;
-    right: 15px;
-    bottom: 15px;
-    transition: background 0.5s;
+    right: 30px;
+    bottom: 90px;
+    margin: 0;
+    padding: 0;
     z-index: 11;
   }
   
@@ -395,6 +371,12 @@ header {
     transform: translate(-50%, -50%);
 }
 
+@media(max-width : 574px){
+    .hero-text-box h1 {
+        font-size: 12px;
+    }
+}
+
 .logo {
     height: 100px;
     width: auto;
@@ -419,7 +401,14 @@ header {
 
 .main-nav li {
     display: inline-block;
-    margin-left: 40px;
+    margin-left: 20px;
+}
+
+@media(max-width : 1000px){
+    .main-nav li {
+        margin-left: 8px;
+        font-size: medium;
+    }
 }
 
 .main-nav li a:link,
