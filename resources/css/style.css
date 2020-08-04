@@ -373,7 +373,7 @@ header {
 
 @media(max-width : 574px){
     .hero-text-box h1 {
-        font-size: 14px;
+        /* font-size: 1em; */
     }
 }
 
