@@ -1,12 +1,10 @@
 <h3>Name</h3>
 <h5>
-          Mahavishnu | Web Developer <br />💻 PHP, Wordpress, Django And
-          Full-Stack Export <br> 🌐 Google cloud Platform | 📈 SEO | 📱 React
-          Native <br />
-          🎓 I help Business Grow Traditionally 👇👇👇<br /><a
-            href="https://www.linkedin.com/in/mahavishnup/ "
-            >Linkedin</a
-          >
+  Mahavishnu | Web Developer <br />💻 PHP, Wordpress, Django And
+  Full-Stack Export <br> 🌐 Google cloud Platform | 📈 SEO | 📱 React
+  Native <br />
+  🎓 I help Business Grow Traditionally 👇👇👇<br />
+  <a href="https://www.linkedin.com/in/mahavishnup/" target="_blank">Linkedin</a>
 </h5>
 <h3>About</h3>
 <p>Hello Everyone, My Name is Mahavishnu, I am Studying B.Tech from Paavai Engineering College in 
