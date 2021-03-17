@@ -1,29 +1,58 @@
-name: Generate xml sitemap
-
-on:
-  push:
-    branches:
-      - master
-
-jobs:
-  sitemap_job:
-    runs-on: ubuntu-latest
-    name: Generate a sitemap
-
-    steps:
-    - name: Checkout the repo
-      uses: actions/checkout@v2
-      with:
-        fetch-depth: 0 
-
-    - name: Generate the sitemap
-      id: sitemap
-      uses: cicirello/generate-sitemap@v1.6.2
-      with:
-        base-url-path: https://mahavishnup.github.io/
-
-    - name: Output stats
-      run: |
-        echo "sitemap-path = ${{ steps.sitemap.outputs.sitemap-path }}"
-        echo "url-count = ${{ steps.sitemap.outputs.url-count }}"
-        echo "excluded-count = ${{ steps.sitemap.outputs.excluded-count }}"
+<?xml version="1.0" encoding="UTF-8" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <url>
+        <loc>https://mahavishnup.github.io/</loc>
+        <lastmod>2021-03-17T10:28:26Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://mahavishnup.github.io/#features</loc>
+        <lastmod>2021-03-17T10:28:26Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://mahavishnup.github.io/#works</loc>
+        <lastmod>2021-03-17T10:28:26Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://mahavishnup.github.io/#education</loc>
+        <lastmod>2021-03-17T10:28:26Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://mahavishnup.github.io/#experience</loc>
+        <lastmod>2021-03-17T10:28:26Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://mahavishnup.github.io/#skills</loc>
+        <lastmod>2021-03-17T10:28:26Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://mahavishnup.github.io/#interest</loc>
+        <lastmod>2021-03-17T10:28:26Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+  
+    <url>
+        <loc>https://mahavishnup.github.io/#projects</loc>
+        <lastmod>2021-03-17T10:28:26Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+    <url>
+        <loc>https://mahavishnup.github.io/#Contacts</loc>
+        <lastmod>2021-03-17T10:28:26Z</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>0.6</priority>
+    </url>
+</urlset>
