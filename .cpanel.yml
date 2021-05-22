@@ -1,1 +1,8 @@
 
+---
+deployment:
+  tasks:
+    - export DEPLOYPATH=/home/byrunimy/repositories/mahavishnuphub.io.git/
+    - /bin/cp index.html $DEPLOYPATH
+    - /bin/cp style.css $DEPLOYPATH
+    - /bin/cp -R images $DEPLOYPATH
