@@ -1,8 +1,7 @@
 <h3>Name</h3>
 <h5>
-  Mahavishnu | Web Developer <br />💻 PHP, Wordpress, Django And
-  Full-Stack Export <br> 🌐 Google cloud Platform | 📈 SEO | 📱 React
-  Native <br />
+  Mahavishnu | Web Developer <br />💻 PHP, Laravel, Next.js And
+  Full-Stack Export <br>
   🎓 I help Business Grow Traditionally 👇👇👇<br />
   <a href="https://www.linkedin.com/in/mahavishnup/" target="_blank">Linkedin</a>
 </h5>

@@ -14,5 +14,5 @@ params = getParams();
 name = unescape(params["name"]);
 email = unescape(params["email"]);
 message = unescape(params["message"]);
-window.open('https://api.whatsapp.com/send?phone=+919751294297&text=NAME : '
+window.open('https://api.whatsapp.com/send?phone=+916380578435&text=NAME : '
 + name +',\n EMAIL : '+ email +',\n MESSAGE : '+ message +'');

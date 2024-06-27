@@ -111,13 +111,13 @@ $(document).ready(function() {
 	
 	var Progress = function( element ) {
 		
-		this.context = element.getContext( "2d" );
-		this.refElement = element.parentNode;
+		this.context = element?.getContext( "2d" );
+		this.refElement = element?.parentNode;
 		this.loaded = 0;
 		this.start = 4.72;
-		this.width = this.context.canvas.width;
-		this.height = this.context.canvas.height;
-		this.total = parseInt( this.refElement.dataset.percent, 10 );
+		this.width = this.context?.canvas.width;
+		this.height = this.context?.canvas.height;
+		this.total = parseInt( this.refElement?.dataset.percent, 10 );
 		this.timer = null;
 		
 		this.diff = 0;
@@ -171,7 +171,7 @@ $(document).ready(function() {
 		progress: function() {
 			var self = this;
 			var index = 0;
-			var firstCanvas = self.bars[0].querySelector( "canvas" );
+			var firstCanvas = self.bars[0]?.querySelector( "canvas" );
 			var firstProg = new Progress( firstCanvas );
 			
 			
@@ -179,7 +179,7 @@ $(document).ready(function() {
 			var timer = setInterval(function() {
 				index++;
 					
-				var canvas = self.bars[index].querySelector( "canvas" );
+				var canvas = self.bars[index]?.querySelector( "canvas" );
 				var prog = new Progress( canvas );
 				
 				if( index == self.bars.length ) {
