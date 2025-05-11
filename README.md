@@ -1,13 +1,27 @@
-<h3>Name</h3>
+<h3>Mahavishnu</h3>
 <h5>
-  Mahavishnu | Web Developer <br />💻 PHP, Laravel, Next.js And
-  Full-Stack Export <br>
+  Full Stack Developer | Laravel & ReactJS Specialist <br>
   🎓 I help Business Grow Traditionally 👇👇👇<br />
-  <a href="https://www.linkedin.com/in/mahavishnup/" target="_blank">Linkedin</a>
+  <a href="https://www.linkedin.com/in/developermahavishnu" target="_blank">Linkedin</a>
 </h5>
+
 <h3>About</h3>
-<p>Hello Everyone, My Name is Mahavishnu, I am Studying B.Tech from Paavai Engineering College in 
-Information Technology branch. I Live in TamilNadu.
-I want to become a Web | Mobile Application Developer. As a Fresher I want to enter into a software Development field with an esteemed Company where I can Show the Skills and 
-Technologies for the Achievement of Organisation and Building my Personal Career. I have also completed Coureses
-of SEO, Django, PHP, React-Native and Full-Stack Export.</p>
+<div>
+  <p>I'm a Full Stack Developer with 5+ years of experience building scalable web applications and SaaS platforms using Laravel, PHP, React.js, Inertia.js, Next.js, and FastAPI.</p>
+  <p>I've independently delivered 20+ full-fledged projects in production, especially in tourism, travel, and hospitality—including booking platforms for hotels, ferries, cabs, and boats, used by 1000+ monthly users. My work involves secure payment gateway integration (Razorpay), WhatsApp automation, and custom admin panels.</p>
+  <span>I specialize in:</span>
+</div>
+
+<p>
+
+* Core PHP, Laravel, React.js, Next.js
+* Python & FastAPI
+* RESTful and 3rd-party API integration
+* MySQL, PostgreSQL
+* CI/CD, GitHub Actions
+* Deployment on DigitalOcean and other cloud infrastructure
+
+💼 Currently working remotely for Hectadata (Malaysia)<br>
+🌐 Open to freelance and remote opportunities<br>
+🔗 Portfolio & GitHub: https://linktr.ee/Mahavishnup
+</p>
