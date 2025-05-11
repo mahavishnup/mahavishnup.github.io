@@ -8,7 +8,7 @@
 <h3>About</h3>
 <div>
   <p>I'm a Full Stack Developer with 5+ years of experience building scalable web applications and SaaS platforms using Laravel, PHP, React.js, Inertia.js, Next.js, and FastAPI.</p>
-  <p>I've independently delivered 20+ full-fledged projects in production, especially in tourism, travel, and hospitality—including booking platforms for hotels, ferries, cabs, and boats, used by 1000+ monthly users. My work involves secure payment gateway integration (Razorpay), WhatsApp automation, and custom admin panels.</p>
+  <p>I've independently delivered 20+ full-fledged projects in production, especially in tourism, travel, and hospitality—including booking platforms for hotels, ferries, cabs, and boats, used by lackks monthly users. My work involves secure payment gateway integration (Razorpay), WhatsApp automation, and custom admin panels.</p>
   <span>I specialize in:</span>
 </div>
 
