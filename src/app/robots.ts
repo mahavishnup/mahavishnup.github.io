@@ -1,5 +1,7 @@
-import { env } from '@/env'
 import type { MetadataRoute } from 'next'
+import { env } from '@/env'
+
+export const dynamic = 'force-static'
 
 const BASE_URL = env.NEXT_PUBLIC_SITE_URL
 

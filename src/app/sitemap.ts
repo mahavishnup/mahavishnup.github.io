@@ -1,7 +1,9 @@
-import { getBlogs } from '@/lib/blog-data'
-import { projects } from '@/lib/static-data'
 import type { MetadataRoute } from 'next'
 import { env } from '@/env'
+import { getBlogs } from '@/lib/blog-data'
+import { projects } from '@/lib/static-data'
+
+export const dynamic = 'force-static'
 
 const BASE_URL = env.NEXT_PUBLIC_SITE_URL
 
