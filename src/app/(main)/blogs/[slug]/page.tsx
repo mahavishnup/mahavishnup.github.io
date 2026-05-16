@@ -1,4 +1,4 @@
-import { prisma } from '@/lib/prisma'
+import { getBlogs, getBlogBySlug } from '@/lib/blog-data'
 import { notFound } from 'next/navigation'
 import Image from 'next/image'
 import Link from 'next/link'
@@ -18,26 +18,18 @@ interface BlogPostPageProps {
   }>
 }
 
-async function getBlogPost(slug: string) {
-  try {
-    const post = await prisma.blog.findUnique({
-      where: {
-        slug: slug,
-        published: true,
-      },
-    })
-    return post
-  } catch (error) {
-    console.error('Error fetching blog post:', error)
-    return null
-  }
+export async function generateStaticParams() {
+  const blogs = await getBlogs()
+  return blogs.map((blog) => ({
+    slug: blog.slug,
+  }))
 }
 
 export async function generateMetadata({
   params,
 }: BlogPostPageProps): Promise<Metadata> {
   const { slug } = await params
-  const post = await getBlogPost(slug)
+  const post = await getBlogBySlug(slug)
 
   if (!post) {
     return {
@@ -52,7 +44,7 @@ export async function generateMetadata({
       title: post.title,
       description: post.excerpt || '',
       type: 'article',
-      publishedTime: post.createdAt.toISOString(),
+      publishedTime: post.createdAt,
       authors: ['Mahavishnu'],
       images: post.coverImage ? [post.coverImage] : [],
     },
@@ -67,7 +59,7 @@ export async function generateMetadata({
 
 export default async function BlogPostPage({ params }: BlogPostPageProps) {
   const { slug } = await params
-  const post = await getBlogPost(slug)
+  const post = await getBlogBySlug(slug)
 
   if (!post) {
     notFound()
@@ -89,23 +81,24 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
 
   const jsonLd = {
     '@context': 'https://schema.org',
-    '@type': 'Article',
+    '@type': 'BlogPosting',
     headline: post.title,
     description: post.excerpt || '',
-    datePublished: post.createdAt.toISOString(),
-    dateModified: post.updatedAt.toISOString(),
+    datePublished: post.createdAt,
+    dateModified: post.updatedAt,
     author: {
       '@type': 'Person',
-      name: 'Mahavishnu',
+      name: 'Mahavishnu P',
       url: BASE_URL,
     },
     publisher: {
       '@type': 'Person',
-      name: 'Mahavishnu',
+      name: 'Mahavishnu P',
+      url: BASE_URL,
     },
     url: `${BASE_URL}/blogs/${slug}`,
     ...(post.coverImage && {
-      image: post.coverImage,
+      image: [post.coverImage],
     }),
   }
 
@@ -115,7 +108,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <main className="min-h-screen px-4 py-20 md:px-6">
+      <div className="min-h-screen px-4 py-20 md:px-6">
         <div className="mx-auto max-w-4xl">
           <Button
             variant="ghost"
@@ -180,7 +173,7 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
             </div>
           </article>
         </div>
-      </main>
+      </div>
     </>
   )
 }

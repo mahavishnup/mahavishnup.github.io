@@ -9,14 +9,10 @@ import {
   CardTitle,
 } from '@/components/ui/card'
 import { CalendarIcon, Clock } from 'lucide-react'
-import { Prisma } from '@prisma/client'
-
-// Define a type that includes the specific fields we select, or use the full model
-// For simplicity in this example, we'll use the full model but in production you might pick fields
-type BlogWithTags = Prisma.BlogGetPayload<object>
+import type { Blog } from '@/lib/blog-data'
 
 interface BlogCardProps {
-  post: BlogWithTags
+  post: Blog
 }
 
 export function BlogCard({ post }: BlogCardProps) {

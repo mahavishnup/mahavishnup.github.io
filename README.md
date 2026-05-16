@@ -1,45 +1,42 @@
 # 🚀 Mahavishnu — Personal Portfolio & Blog
 
-A modern, full-stack developer portfolio built with **Next.js 16**, **TypeScript**, **Tailwind CSS**, and **Supabase**. Features a 3D hero scene, admin CMS, SEO-optimized blog system, and premium dark-mode design.
+A modern, high-performance developer portfolio built with **Next.js 16**, **TypeScript**, and **Tailwind CSS**. Designed for **Static Export** and optimized for **GitHub Pages**. Features a 3D hero scene, local Markdown blog system, and premium dark-mode aesthetics.
 
 ![Next.js](https://img.shields.io/badge/Next.js-16-black?logo=next.js)
 ![TypeScript](https://img.shields.io/badge/TypeScript-5-blue?logo=typescript)
 ![Tailwind CSS](https://img.shields.io/badge/Tailwind-4-38B2AC?logo=tailwindcss)
-![Prisma](https://img.shields.io/badge/Prisma-ORM-2D3748?logo=prisma)
-![Supabase](https://img.shields.io/badge/Supabase-PostgreSQL-3ECF8E?logo=supabase)
+![GitHub Pages](https://img.shields.io/badge/Deployment-GitHub_Pages-black?logo=github-pages)
 
 ---
 
 ## ✨ Features
 
 - **3D Hero Section** — Interactive React Three Fiber scene with ambient glow animations
+- **Static Export** — Zero-maintenance architecture, perfect for GitHub Pages
 - **Responsive Design** — Pixel-perfect on mobile, tablet, and desktop
 - **Dark / Light Mode** — System-aware theme with smooth transitions
-- **Blog System** — Markdown-based with SEO, tags, and search/filter
-- **Admin Panel** — Full CMS with blog CRUD, message inbox, and newsletter management
+- **Markdown Blog** — Content managed via local `.md` files with YAML frontmatter
+- **SEO Optimized** — OpenGraph, Twitter cards, sitemap.xml, robots.txt, and professional keywords
 - **Custom Cursor** — Hydration-safe animated cursor (desktop only)
-- **Contact Form** — Anti-spam honeypot, stores messages to database
-- **Newsletter** — Email subscription with admin management
-- **SEO Optimized** — OpenGraph, Twitter cards, sitemap.xml, robots.txt
+- **Static Forms** — Contact and Newsletter forms integrated with Formspree
 - **Framer Motion** — Staggered animations throughout
-- **Supabase Auth** — Admin-only authentication
+- **Automated Deploy** — GitHub Actions workflow for zero-click deployment
 
 ---
 
 ## 🛠 Tech Stack
 
-| Layer         | Technology                         |
-| :------------ | :--------------------------------- |
-| Framework     | Next.js 16 (App Router, Turbopack) |
-| Language      | TypeScript                         |
-| Styling       | Tailwind CSS 4                     |
-| UI Components | ShadCN UI                          |
-| Animations    | Framer Motion                      |
-| 3D            | React Three Fiber + Drei           |
-| Database      | Supabase (PostgreSQL)              |
-| ORM           | Prisma                             |
-| Auth          | Supabase Auth                      |
-| Deployment    | Vercel                             |
+| Layer         | Technology                             |
+| :------------ | :------------------------------------- |
+| Framework     | Next.js 16 (App Router, Static Export) |
+| Language      | TypeScript                             |
+| Styling       | Tailwind CSS 4                         |
+| UI Components | ShadCN UI                              |
+| Animations    | Framer Motion                          |
+| 3D            | React Three Fiber + Drei               |
+| Blog Content  | Markdown + Gray-Matter                 |
+| Forms         | Formspree                              |
+| Deployment    | GitHub Pages                           |
 
 ---
 
@@ -49,12 +46,11 @@ A modern, full-stack developer portfolio built with **Next.js 16**, **TypeScript
 
 - Node.js 20+
 - npm / yarn / pnpm
-- Supabase project (free tier)
 
 ### 1. Clone & Install
 
 ```bash
-git clone https://github.com/mahavishnup/personal-portfolio.git
+git clone https://github.com/mahavishnup/mahavishnup.github.io.git ./personal-portfolio
 cd personal-portfolio
 npm install
 ```
@@ -65,17 +61,12 @@ npm install
 cp .env.example .env
 ```
 
-Fill in your Supabase credentials in `.env` — see [.env.example](.env.example) for all required variables.
+Fill in your **Formspree** endpoints in `.env`:
 
-### 3. Database Setup
+- `NEXT_PUBLIC_FORMSPREE_URL`: Your contact form endpoint.
+- `NEXT_PUBLIC_NEWSLETTER_URL`: Your newsletter form endpoint.
 
-```bash
-npx prisma generate
-npx prisma db push
-npx prisma db seed   # optional: seeds sample data
-```
-
-### 4. Run Development Server
+### 3. Run Development Server
 
 ```bash
 npm run dev
@@ -91,38 +82,29 @@ Open [http://localhost:3000](http://localhost:3000) to view the site.
 src/
 ├── app/
 │   ├── (main)/          # Public routes (home, about, blogs, etc.)
-│   ├── admin/           # Admin panel (protected)
-│   └── actions/         # Server actions (blog, contact, auth)
+│   └── sitemap.ts       # Dynamic sitemap generator
+├── content/
+│   └── blogs/           # Blog posts (.md files)
 ├── components/
 │   ├── 3d/              # Three.js hero scene
-│   ├── about/           # Experience timeline
-│   ├── admin/           # Admin components (sidebar, editor, etc.)
-│   ├── auth/            # Login form
-│   ├── blog/            # Blog card, filters
-│   ├── contact/         # Contact form
-│   ├── home/            # Hero, skills, projects, about sections
-│   ├── layout/          # Header, footer
-│   ├── projects/        # Project grid
+│   ├── blog/            # Blog card, listing
+│   ├── contact/         # Contact form (Formspree)
+│   ├── home/            # Skills, projects, about sections
+│   ├── layout/          # Header, footer (Newsletter)
 │   └── ui/              # ShadCN UI + custom cursor
-├── lib/                 # Prisma client, utils, static data
-├── utils/supabase/      # Supabase client/server helpers
-└── hooks/               # Custom React hooks
+├── lib/                 # Static data, blog reader, utils
+└── env.ts               # Environment variable validation
 ```
 
 ---
 
-## 🌐 Deployment (Vercel)
+## 🌐 Deployment (GitHub Pages)
 
-1. Push your code to GitHub
-2. Import the repo on [vercel.com](https://vercel.com)
-3. Add environment variables in Vercel dashboard:
-   - `DATABASE_URL`
-   - `NEXT_PUBLIC_SUPABASE_URL`
-   - `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_DEFAULT_KEY`
-   - `NEXT_PUBLIC_SITE_URL` _(optional — defaults to `http://localhost:3000`)_
-4. Deploy!
+This project is configured for automatic deployment via GitHub Actions:
 
-> **Note:** `NEXT_PUBLIC_SITE_URL` falls back to `http://localhost:3000` if not set. If you use a custom domain on Vercel, set this variable to your custom domain URL.
+1. Push your code to the `master` branch.
+2. The workflow in `.github/workflows/deploy.yml` will automatically build and deploy the site to the `gh-pages` branch.
+3. Ensure your Repository Settings -> **Pages** is set to deploy from **GitHub Actions**.
 
 ---
 
@@ -131,8 +113,7 @@ src/
 | Command          | Description               |
 | :--------------- | :------------------------ |
 | `npm run dev`    | Start development server  |
-| `npm run build`  | Production build          |
-| `npm run start`  | Start production server   |
+| `npm run build`  | Static export build       |
 | `npm run format` | Format code with Prettier |
 | `npm run lint`   | Lint with ESLint          |
 
@@ -149,6 +130,9 @@ This project is open source and available under the [MIT License](LICENSE).
 **Mahavishnu P**
 
 - [GitHub](https://github.com/mahavishnup)
-- [LinkedIn](https://www.linkedin.com/in/developermahavishnu/)
+- [LinkedIn](https://www.linkedin.com/in/developermahavishnu)
 - [YouTube](https://www.youtube.com/@mahavishnu9312)
-- [Instagram](https://www.instagram.com/developermahavishnu/)
+- [Instagram](https://www.instagram.com/developermahavishnu)
+- [Linktree](https://linktr.ee/Mahavishnup)
+- [Whatsapp](https://wa.me/message/U6MXBH4QLX4XA1)
+- [Portfolio](https://mahavishnup.github.io)

@@ -1,64 +1,93 @@
 import { Badge } from '@/components/ui/badge'
-import { Code2, Database, Layout, Server, ArrowUpRight } from 'lucide-react'
+import {
+  Code2,
+  Bot,
+  Layout,
+  Server,
+  ArrowUpRight,
+  Cpu,
+  Puzzle,
+} from 'lucide-react'
+import Link from 'next/link'
 
 const skills = [
   'Laravel',
   'PHP',
-  'Livewire',
-  'FilamentPHP',
   'React.js',
   'Next.js',
-  'Inertia.js',
-  'TypeScript',
-  'Python',
   'FastAPI',
-  'Tailwind CSS',
-  'Bootstrap',
-  'jQuery',
-  'MySQL',
+  'Python',
+  'LangChain',
+  'MCP (Model Context Protocol)',
+  'AI-assisted Workflows',
+  'RabbitMQ',
+  'Pinecone',
+  'Livewire',
+  'FilamentPHP',
+  'Inertia.js',
   'PostgreSQL',
-  'MongoDB',
+  'TimescaleDB',
+  'MySQL',
   'Redis',
-  'Git',
+  'TypeScript',
+  'JavaScript',
+  'Tailwind CSS',
   'Docker',
   'DigitalOcean',
+  'GitHub Actions',
+  'CI/CD',
   'REST APIs',
-  'Supabase',
-  'Prisma',
+  'WhatsApp Integrations',
 ]
 
 const services = [
   {
-    title: 'Full-Stack Development',
+    title: 'Full-Stack Engineering',
     description:
-      'Building robust, scalable web applications from concept to deployment using Laravel and Next.js.',
+      'End-to-end development of scalable SaaS platforms and enterprise applications using Laravel and Next.js.',
     icon: <Code2 className="h-6 w-6" />,
     gradient: 'from-violet-500 to-purple-600',
     num: '01',
   },
   {
-    title: 'API Design & Integration',
+    title: 'Agentic AI & LLM Workflows',
     description:
-      'Designing RESTful and GraphQL APIs that are secure, documented, and high-performing.',
-    icon: <Server className="h-6 w-6" />,
-    gradient: 'from-blue-500 to-cyan-500',
+      'Building intelligent systems with multi-agent workflows, RAG, and custom LLM integrations using LangGraph.',
+    icon: <Bot className="h-6 w-6" />,
+    gradient: 'from-fuchsia-500 to-purple-600',
     num: '02',
   },
   {
-    title: 'Database Architecture',
+    title: 'Backend & Event-Driven Systems',
     description:
-      'Optimizing database schemas and queries for speed and reliability using PostgreSQL and MySQL.',
-    icon: <Database className="h-6 w-6" />,
-    gradient: 'from-emerald-500 to-teal-500',
+      'Designing high-performance APIs and distributed systems with FastAPI and RabbitMQ message queues.',
+    icon: <Server className="h-6 w-6" />,
+    gradient: 'from-blue-500 to-cyan-500',
     num: '03',
   },
   {
-    title: 'Frontend Engineering',
+    title: 'Modern Frontend Architecture',
     description:
-      'Creating responsive, interactive, and accessible user interfaces with React and Tailwind CSS.',
+      'Crafting pixel-perfect, interactive user experiences with React, TypeScript, and modern state management.',
     icon: <Layout className="h-6 w-6" />,
     gradient: 'from-orange-500 to-rose-500',
     num: '04',
+  },
+  {
+    title: 'Enterprise Integrations',
+    description:
+      'Seamlessly connecting platforms with third-party services like Payment Gateways and WhatsApp Automation.',
+    icon: <Puzzle className="h-6 w-6" />,
+    gradient: 'from-emerald-500 to-teal-600',
+    num: '05',
+  },
+  {
+    title: 'Technical Consulting',
+    description:
+      'Strategic technology guidance, system architecture design, and comprehensive code audits for businesses.',
+    icon: <Cpu className="h-6 w-6" />,
+    gradient: 'from-blue-600 to-indigo-700',
+    num: '06',
   },
 ]
 
@@ -99,10 +128,11 @@ export default function SkillsServices() {
         </div>
 
         {/* Service Cards */}
-        <div className="mx-auto grid max-w-5xl grid-cols-1 gap-4 md:grid-cols-2 md:gap-6">
+        <div className="mx-auto grid max-w-7xl grid-cols-1 gap-4 md:grid-cols-2 md:gap-6 lg:grid-cols-3">
           {services.map((service, index) => (
-            <div
+            <Link
               key={index}
+              href="/services"
               className="group bg-card hover:border-primary/30 hover:shadow-primary/5 relative overflow-hidden rounded-xl border px-5 py-5 transition-all duration-300 hover:shadow-xl md:p-6"
             >
               {/* Gradient top bar */}
@@ -134,7 +164,7 @@ export default function SkillsServices() {
               <div className="text-muted-foreground/40 group-hover:text-primary mt-4 transition-all duration-300 group-hover:translate-x-1">
                 <ArrowUpRight className="h-5 w-5" />
               </div>
-            </div>
+            </Link>
           ))}
         </div>
       </div>

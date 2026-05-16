@@ -1,4 +1,4 @@
-import { prisma } from '@/lib/prisma'
+import { getBlogs } from '@/lib/blog-data'
 import { projects } from '@/lib/static-data'
 import type { MetadataRoute } from 'next'
 import { env } from '@/env'
@@ -47,21 +47,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   ]
 
   // Dynamic blog pages
-  let blogPages: MetadataRoute.Sitemap = []
-  try {
-    const blogs = await prisma.blog.findMany({
-      where: { published: true },
-      select: { slug: true, updatedAt: true },
-    })
-    blogPages = blogs.map((blog) => ({
-      url: `${BASE_URL}/blogs/${blog.slug}`,
-      lastModified: blog.updatedAt,
-      changeFrequency: 'weekly' as const,
-      priority: 0.7,
-    }))
-  } catch {
-    // DB not available, skip dynamic pages
-  }
+  const blogs = await getBlogs()
+  const blogPages: MetadataRoute.Sitemap = blogs.map((blog) => ({
+    url: `${BASE_URL}/blogs/${blog.slug}`,
+    lastModified: new Date(blog.updatedAt),
+    changeFrequency: 'weekly' as const,
+    priority: 0.7,
+  }))
 
   // Static project pages
   const projectPages: MetadataRoute.Sitemap = projects.map((project) => ({

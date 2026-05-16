@@ -14,15 +14,75 @@ import {
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Separator } from '@/components/ui/separator'
-import { useActionState } from 'react'
-import { subscribeNewsletter } from '@/app/actions/newsletter'
-
+import { env } from '@/env'
+import { useState } from 'react'
 export function Footer() {
   const currentYear = new Date().getFullYear()
-  const [state, formAction, isPending] = useActionState(
-    subscribeNewsletter,
-    null
-  )
+  const [isPending, setIsPending] = useState(false)
+  const [state, setState] = useState<{
+    error: string | null
+    success: string | null
+  }>({ error: null, success: null })
+
+  async function handleSubscribe(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    setIsPending(true)
+    setState({ error: null, success: null })
+
+    const form = event.currentTarget
+    const formData = new FormData(form)
+    const email = formData.get('email')
+
+    try {
+      const endpoint = env.NEXT_PUBLIC_NEWSLETTER_URL
+      if (!endpoint) {
+        // If no endpoint, we'll simulate success for now so the UI works
+        await new Promise((resolve) => setTimeout(resolve, 1000))
+        setState({
+          error: null,
+          success: 'Successfully subscribed (Simulation)!',
+        })
+        form.reset()
+        return
+      }
+
+      /**
+       * NOTE: For now, we are using Formspree to collect emails.
+       * To switch to Mailchimp or ConvertKit later:
+       * 1. Get your API/Action URL from the provider.
+       * 2. Update NEXT_PUBLIC_NEWSLETTER_URL in your .env.local file.
+       * 3. You may need to adjust the body fields (e.g., 'EMAIL' instead of 'email')
+       *    depending on the provider's API.
+       */
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        body: JSON.stringify({ email }),
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      })
+
+      if (response.ok) {
+        setState({ error: null, success: 'Successfully subscribed!' })
+        form.reset()
+      } else {
+        setState({
+          error: 'Failed to subscribe. Please try again.',
+          success: null,
+        })
+      }
+    } catch (err) {
+      console.error('Newsletter Error:', err)
+      setState({
+        error:
+          'Failed to subscribe. Please check your connection and try again.',
+        success: null,
+      })
+    } finally {
+      setIsPending(false)
+    }
+  }
 
   return (
     <footer className="bg-muted/30 border-border/50 border-t pt-16 pb-8">
@@ -167,7 +227,7 @@ export function Footer() {
             <p className="text-muted-foreground text-sm">
               Subscribe to get the latest tutorials and tech insights.
             </p>
-            <form action={formAction} className="space-y-2">
+            <form onSubmit={handleSubscribe} className="space-y-2">
               <div className="flex gap-2">
                 <Input
                   name="email"
@@ -180,10 +240,10 @@ export function Footer() {
                   {isPending ? '...' : 'Subscribe'}
                 </Button>
               </div>
-              {state?.success && (
+              {state.success && (
                 <p className="text-sm text-green-600">{state.success}</p>
               )}
-              {state?.error && (
+              {state.error && (
                 <p className="text-destructive text-sm">{state.error}</p>
               )}
             </form>

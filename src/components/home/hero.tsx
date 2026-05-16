@@ -65,8 +65,11 @@ export default function Hero() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-muted-foreground mx-auto max-w-2xl text-base leading-relaxed font-light sm:text-lg md:text-xl lg:text-2xl"
           >
-            Building scalable SaaS platforms, booking systems & e-commerce
-            solutions with{' '}
+            Architecting scalable SaaS platforms,{' '}
+            <span className="text-foreground font-semibold">
+              AI-assisted workflows
+            </span>{' '}
+            & enterprise booking systems with{' '}
             <span className="text-foreground decoration-primary/50 font-semibold underline decoration-2 underline-offset-4">
               Laravel
             </span>

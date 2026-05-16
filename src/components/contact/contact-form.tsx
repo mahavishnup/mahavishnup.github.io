@@ -1,7 +1,6 @@
 'use client'
 
-import { useActionState } from 'react'
-import { submitContactAction } from '@/app/actions/contact'
+import { useState } from 'react'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
@@ -14,14 +13,64 @@ import {
   CardHeader,
   CardTitle,
 } from '@/components/ui/card'
-// toast implementation would be nice, but simple message for now
+import { env } from '@/env'
 
 export function ContactForm() {
-  const initialState = { error: null as string | null, success: false }
-  const [state, formAction, isPending] = useActionState(
-    submitContactAction,
-    initialState
-  )
+  const [isPending, setIsPending] = useState(false)
+  const [state, setState] = useState<{
+    error: string | null
+    success: boolean
+  }>({ error: null, success: false })
+
+  async function handleSubmit(event: React.FormEvent<HTMLFormElement>) {
+    event.preventDefault()
+    setIsPending(true)
+    setState({ error: null, success: false })
+
+    const form = event.currentTarget
+    const formData = new FormData(form)
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      message: formData.get('message'),
+    }
+
+    try {
+      const endpoint = env.NEXT_PUBLIC_FORMSPREE_URL
+      if (!endpoint) {
+        throw new Error('Formspree endpoint not configured')
+      }
+
+      const response = await fetch(endpoint, {
+        method: 'POST',
+        body: JSON.stringify(data),
+        headers: {
+          Accept: 'application/json',
+          'Content-Type': 'application/json',
+        },
+      })
+
+      if (response.ok) {
+        setState({ error: null, success: true })
+        form.reset()
+      } else {
+        const errorData = await response.json()
+        setState({
+          error: errorData.error || 'Failed to send message. Please try again.',
+          success: false,
+        })
+      }
+    } catch (err) {
+      console.error('Contact Form Error:', err)
+      setState({
+        error:
+          'Failed to send message. Please check your connection and try again.',
+        success: false,
+      })
+    } finally {
+      setIsPending(false)
+    }
+  }
 
   return (
     <Card className="mx-auto w-full max-w-lg">
@@ -33,7 +82,7 @@ export function ContactForm() {
         </CardDescription>
       </CardHeader>
       <CardContent>
-        {state?.success ? (
+        {state.success ? (
           <div className="rounded-md bg-green-500/15 p-4 text-center text-green-600 dark:text-green-400">
             <h3 className="mb-1 font-semibold">Message Sent!</h3>
             <p className="text-sm">
@@ -41,27 +90,14 @@ export function ContactForm() {
             </p>
             <Button
               variant="link"
-              onClick={() => window.location.reload()}
+              onClick={() => setState({ error: null, success: false })}
               className="mt-2"
             >
               Send another message
             </Button>
           </div>
         ) : (
-          <form action={formAction} className="space-y-4">
-            {/* Honeypot anti-spam field — hidden from humans */}
-            <div
-              className="absolute -left-[9999px] opacity-0"
-              aria-hidden="true"
-            >
-              <input
-                type="text"
-                name="website"
-                tabIndex={-1}
-                autoComplete="off"
-              />
-            </div>
-
+          <form onSubmit={handleSubmit} className="space-y-4">
             <div className="grid gap-2">
               <Label htmlFor="name">Name</Label>
               <Input id="name" name="name" placeholder="Your Name" required />
@@ -89,7 +125,7 @@ export function ContactForm() {
               />
             </div>
 
-            {state?.error && (
+            {state.error && (
               <p className="text-destructive text-sm font-medium">
                 {state.error}
               </p>

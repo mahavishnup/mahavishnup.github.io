@@ -5,12 +5,10 @@ import { Badge } from '@/components/ui/badge'
 import { BlogCard } from '@/components/blog/blog-card'
 import { Input } from '@/components/ui/input'
 import { Search } from 'lucide-react'
-import type { Prisma } from '@prisma/client'
-
-type BlogWithTags = Prisma.BlogGetPayload<object>
+import type { Blog } from '@/lib/blog-data'
 
 interface BlogFilterProps {
-  blogs: BlogWithTags[]
+  blogs: Blog[]
   allTags: string[]
 }
 

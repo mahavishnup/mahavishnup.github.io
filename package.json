@@ -7,14 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint",
-    "format": "prettier --write .",
-    "db:push": "prisma db push",
-    "db:pull": "prisma db pull",
-    "db:generate": "prisma generate",
-    "db:seed": "prisma db seed",
-    "db:fresh": "prisma db push --force-reset",
-    "db:studio": "prisma studio",
-    "setup": "npm install && prisma generate && prisma db push --accept-data-loss && prisma db seed"
+    "format": "prettier --write ."
   },
   "dependencies": {
     "@radix-ui/react-avatar": "^1.1.11",
@@ -23,19 +16,15 @@
     "@radix-ui/react-tabs": "^1.1.13",
     "@react-three/drei": "^10.7.7",
     "@react-three/fiber": "^9.5.0",
-    "@supabase/ssr": "^0.8.0",
-    "@supabase/supabase-js": "^2.95.3",
     "@tailwindcss/typography": "^0.5.19",
-    "@types/bcryptjs": "^2.4.6",
     "@types/three": "^0.182.0",
     "@uiw/react-md-editor": "^4.0.11",
-    "bcryptjs": "^3.0.3",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "date-fns": "^4.1.0",
     "framer-motion": "^12.34.0",
+    "gray-matter": "^4.0.3",
     "highlight.js": "^11.11.1",
-    "jose": "^6.1.3",
     "lucide-react": "^0.565.0",
     "next": "16.1.6",
     "next-themes": "^0.4.6",
@@ -53,7 +42,6 @@
     "zod": "^4.3.6"
   },
   "devDependencies": {
-    "@prisma/client": "^6.19.2",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
@@ -63,14 +51,10 @@
     "eslint-config-next": "16.1.6",
     "prettier": "^3.8.1",
     "prettier-plugin-tailwindcss": "^0.7.2",
-    "prisma": "^6.19.2",
     "shadcn": "^3.8.5",
     "tailwindcss": "^4",
     "ts-node": "^10.9.2",
     "tw-animate-css": "^1.4.0",
     "typescript": "^5"
-  },
-  "prisma": {
-    "seed": "ts-node --compiler-options {\"module\":\"CommonJS\"} prisma/seed.ts"
   }
 }

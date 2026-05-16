@@ -9,8 +9,16 @@ const experiences = [
     title: 'PHP Developer',
     company: 'Hectadata Pvt Ltd · Remote, Malaysia',
     description:
-      'Building enterprise-grade web applications using Laravel, PHP, FastAPI, and React.js. Developing scalable RESTful APIs using FastAPI and managing MySQL/PostgreSQL databases. Collaborating with cross-functional teams in Agile sprints and CI/CD pipelines.',
-    tech: ['Laravel', 'PHP', 'FastAPI', 'React.js', 'MySQL', 'PostgreSQL'],
+      'Architecting enterprise-grade applications using Laravel, PHP, and FastAPI. Developing sophisticated AI workflows using LangChain and LangGraph for complex legal analysis and automated summarization. Managing high-throughput message processing with RabbitMQ and database systems with MySQL/PostgreSQL.',
+    tech: [
+      'Laravel',
+      'FastAPI',
+      'LangChain',
+      'LangGraph',
+      'RabbitMQ',
+      'Pinecone',
+      'React.js',
+    ],
   },
   {
     year: 'Nov 2020 – Jun 2024',
@@ -27,14 +35,6 @@ const experiences = [
     description:
       'Developed a Quiz Portal and redesigned client websites using Laravel, JS, HTML/CSS. Improved user experience, reduced page load times, and deployed via GitHub & Heroku.',
     tech: ['Laravel', 'JavaScript', 'HTML/CSS', 'Heroku'],
-  },
-  {
-    year: 'Aug 2017 – Jun 2021',
-    title: 'B.Tech — Information Technology (CGPA: 7.75)',
-    company: 'Paavai Engineering College · Namakkal',
-    description:
-      'Graduated with strong foundations in data structures, algorithms, and full-stack web development. Published a conference paper on blockchain-based invoice factor. Won 2nd place at a national AI symposium. Participated in Smart India Hackathon 2020.',
-    tech: ['C', 'C++', 'Java', 'Python', 'PHP', 'MySQL'],
   },
 ]
 

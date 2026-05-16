@@ -13,6 +13,7 @@ import {
 import { Input } from '@/components/ui/input'
 import { ArrowUpRight, Github, Search } from 'lucide-react'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useState } from 'react'
 import type { Project } from '@/lib/static-data'
 
@@ -85,15 +86,31 @@ export function ProjectGrid({ projects }: ProjectGridProps) {
             key={project.id}
             className="group border-border/50 bg-card/50 hover:bg-card/80 flex flex-col overflow-hidden transition-colors"
           >
-            <div className="relative aspect-video overflow-hidden">
-              {/* Placeholder gradient */}
-              <div className="from-primary/20 absolute inset-0 bg-linear-to-br to-purple-500/20 transition-transform duration-500 group-hover:scale-105" />
-              <div className="text-muted-foreground absolute inset-0 flex items-center justify-center font-medium">
-                {project.title} Preview
+            <Link href={`/projects/${project.slug}`} className="block">
+              <div className="bg-muted relative aspect-video overflow-hidden">
+                {project.coverImage ? (
+                  <Image
+                    src={project.coverImage}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <>
+                    <div className="from-primary/20 absolute inset-0 bg-linear-to-br to-purple-500/20 transition-transform duration-500 group-hover:scale-105" />
+                    <div className="text-muted-foreground absolute inset-0 flex items-center justify-center font-medium">
+                      {project.title} Preview
+                    </div>
+                  </>
+                )}
               </div>
-            </div>
+            </Link>
             <CardHeader>
-              <CardTitle className="line-clamp-1">{project.title}</CardTitle>
+              <Link href={`/projects/${project.slug}`}>
+                <CardTitle className="hover:text-primary line-clamp-1 transition-colors">
+                  {project.title}
+                </CardTitle>
+              </Link>
               <CardDescription className="line-clamp-2">
                 {project.description}
               </CardDescription>

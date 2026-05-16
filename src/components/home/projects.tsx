@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import Image from 'next/image'
 import { ArrowUpRight, Github } from 'lucide-react'
 import { projects } from '@/lib/static-data'
 import { Badge } from '@/components/ui/badge'
@@ -34,11 +35,22 @@ export default function Projects() {
               key={project.id}
               className="group border-border/50 bg-card/50 hover:bg-card/80 overflow-hidden transition-colors"
             >
-              <div className="relative aspect-video overflow-hidden">
-                <div className="from-primary/20 absolute inset-0 bg-linear-to-br to-purple-500/20 transition-transform duration-500 group-hover:scale-105" />
-                <div className="text-muted-foreground absolute inset-0 flex items-center justify-center font-medium">
-                  {project.title} Preview
-                </div>
+              <div className="bg-muted relative aspect-video overflow-hidden">
+                {project.coverImage ? (
+                  <Image
+                    src={project.coverImage}
+                    alt={project.title}
+                    fill
+                    className="object-cover transition-transform duration-500 group-hover:scale-105"
+                  />
+                ) : (
+                  <>
+                    <div className="from-primary/20 absolute inset-0 bg-linear-to-br to-purple-500/20 transition-transform duration-500 group-hover:scale-105" />
+                    <div className="text-muted-foreground absolute inset-0 flex items-center justify-center font-medium">
+                      {project.title} Preview
+                    </div>
+                  </>
+                )}
               </div>
               <CardHeader>
                 <CardTitle className="line-clamp-1">{project.title}</CardTitle>

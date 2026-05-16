@@ -5,13 +5,13 @@ import SkillsServices from '@/components/home/skills-services'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Mahavishnu — Engineering Scalable Web Solutions',
+  title: 'Mahavishnu P — Senior Full Stack Developer & Laravel Specialist',
   description:
-    'Senior Laravel-focused Full-Stack Developer with 5+ years of experience building scalable web applications. View my portfolio, projects, and blog.',
+    'Senior Full-Stack Developer with 5+ years building scalable booking platforms, SaaS apps, and e-commerce solutions. Expert in Laravel, React, Next.js & FastAPI.',
   openGraph: {
-    title: 'Mahavishnu — Engineering Scalable Web Solutions',
+    title: 'Mahavishnu P — Senior Full Stack Developer',
     description:
-      'Senior Full-Stack Developer specializing in Laravel, Next.js, and modern web architecture.',
+      'Senior Full-Stack Developer specializing in Laravel, Next.js, and modern web architecture. Building scalable web solutions for tourism, travel & hospitality.',
   },
 }
 
