@@ -45,6 +45,12 @@ jobs:
         run: ${{ steps.detect-package-manager.outputs.manager }} ${{ steps.detect-package-manager.outputs.command }}
       - name: Build with Next.js
         run: ${{ steps.detect-package-manager.outputs.runner }} next build
+        env:
+          NEXT_PUBLIC_SITE_URL: https://mahavishnup.github.io
+          NEXT_PUBLIC_FORMSPREE_URL: ${{ secrets.NEXT_PUBLIC_FORMSPREE_URL }}
+          NEXT_PUBLIC_GA_ID: ${{ secrets.NEXT_PUBLIC_GA_ID }}
+          NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ secrets.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION }}
+          NEXT_PUBLIC_NEWSLETTER_URL: ${{ secrets.NEXT_PUBLIC_NEWSLETTER_URL }}
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
