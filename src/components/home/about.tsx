@@ -32,31 +32,33 @@ export default function About() {
           <div className="flex-1 space-y-6 text-center md:text-left">
             <h2 className="text-3xl font-bold md:text-5xl">About Me</h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              I&apos;m a Full-Stack Developer with{' '}
-              <span className="text-primary font-medium">5+ years</span> of
-              experience building scalable web applications, SaaS platforms, and
-              e-commerce solutions using Laravel, PHP, React.js, Inertia.js,
-              Next.js, and FastAPI.
+              I&apos;m a Senior Full Stack Engineer with{' '}
+              <span className="text-primary font-medium">6 years</span> of
+              experience architecting and building enterprise applications, REST
+              APIs, and AI-powered systems. Strong expertise in Laravel, PHP,
+              React.js, FastAPI, Python, PostgreSQL, and cloud infrastructure.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              I&apos;ve independently delivered{' '}
+              Experienced in database optimization, distributed systems,
+              asynchronous processing, AI/LLM integrations, and production
+              deployments — delivering{' '}
               <span className="text-primary font-medium">
                 20+ production projects
-              </span>
-              —especially in tourism, travel, hospitality, and
-              e-commerce—including booking platforms for hotels, ferries, cabs,
-              and boats used by lakhs of monthly users.
+              </span>{' '}
+              across tourism, e-commerce, legal tech, and enterprise platforms.
             </p>
 
             <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
-              {['Laravel', 'Next.js', 'FastAPI', 'React.js'].map((skill) => (
-                <div
-                  key={skill}
-                  className="bg-card border-border/50 hover:border-primary/50 rounded-xl border p-4 text-center font-medium transition-colors"
-                >
-                  {skill}
-                </div>
-              ))}
+              {['Laravel', 'FastAPI', 'React.js / Next.js', 'Python AI'].map(
+                (skill) => (
+                  <div
+                    key={skill}
+                    className="bg-card border-border/50 hover:border-primary/50 rounded-xl border p-4 text-center font-medium transition-colors"
+                  >
+                    {skill}
+                  </div>
+                )
+              )}
             </div>
           </div>
         </motion.div>

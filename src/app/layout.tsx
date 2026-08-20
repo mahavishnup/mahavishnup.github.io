@@ -34,11 +34,11 @@ export const metadata: Metadata = {
     apple: [{ url: '/apple-touch-icon.png' }],
   },
   title: {
-    default: 'Mahavishnu P — Full Stack Developer & Laravel Specialist',
+    default: 'Mahavishnu P — Senior Full Stack Engineer | AI & Backend',
     template: '%s | Mahavishnu P',
   },
   description:
-    'Senior Full-Stack Developer with 5+ years building scalable booking platforms, SaaS apps, and e-commerce solutions. Expert in Laravel, React, Next.js & FastAPI. I help businesses grow traditionally through modern web architecture.',
+    'Senior Full Stack Engineer with 6 years of experience architecting enterprise applications, REST APIs, and AI-powered systems. Expert in Laravel, FastAPI, Python, React.js, PostgreSQL, and cloud infrastructure. Experienced in AI/LLM integrations and production deployments.',
   keywords: [
     'mahavishnu',
     'mahavishnup',
@@ -65,9 +65,9 @@ export const metadata: Metadata = {
     locale: 'en_US',
     url: BASE_URL,
     siteName: 'Mahavishnu — Engineering Scalable Web Solutions',
-    title: 'Mahavishnu P — Senior Full-Stack Developer',
+    title: 'Mahavishnu P — Senior Full Stack Engineer | AI & Backend',
     description:
-      'Expert Laravel & ReactJS specialist building scalable web solutions for tourism, travel & hospitality.',
+      'Senior Full Stack Engineer specializing in Laravel, FastAPI, React.js, Python AI systems, and cloud infrastructure. Building scalable enterprise solutions.',
     images: [
       {
         url: '/favicon.png',
@@ -105,9 +105,9 @@ export default function RootLayout({
     '@type': 'Person',
     name: 'Mahavishnu P',
     url: BASE_URL,
-    jobTitle: 'Senior Full Stack Developer',
+    jobTitle: 'Senior Full Stack Engineer',
     description:
-      'Expert Laravel & ReactJS specialist building scalable web solutions for tourism, travel & hospitality.',
+      'Senior Full Stack Engineer with 6 years of experience architecting enterprise applications, REST APIs, and AI-powered systems. Expert in Laravel, FastAPI, Python, React.js, PostgreSQL, and cloud infrastructure.',
     sameAs: [
       'https://github.com/mahavishnup',
       'https://www.linkedin.com/in/developermahavishnu',

@@ -7,11 +7,11 @@ import Link from 'next/link'
 export const metadata = {
   title: 'About Us',
   description:
-    'Senior Laravel-focused Full-Stack Developer with 5+ years of experience. Learn about my journey, skills, and professional experience.',
+    'Senior Laravel-focused Full-Stack Developer with 6 years of experience. Learn about my journey, skills, and professional experience.',
   openGraph: {
     title: 'About Mahavishnu',
     description:
-      'Senior Full-Stack Developer with 5+ years building scalable web solutions.',
+      'Senior Full-Stack Developer with 6 years building scalable web solutions.',
   },
 }
 
@@ -58,7 +58,7 @@ export default function AboutPage() {
                 complex, problem-solving software systems.
               </p>
               <p>
-                Over the past 5+ years, I have specialized in bridging the gap
+                Over the past 6+ years, I have specialized in bridging the gap
                 between robust backend ecosystems (Laravel, FastAPI) and
                 cutting-edge technologies. At Byrut Business Solutions, I led
                 the development of an enterprise-scale tourism booking suite

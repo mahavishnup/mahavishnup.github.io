@@ -7,7 +7,7 @@ import type { Metadata } from 'next'
 export const metadata: Metadata = {
   title: 'Mahavishnu P — Senior Full Stack Developer & Laravel Specialist',
   description:
-    'Senior Full-Stack Developer with 5+ years building scalable booking platforms, SaaS apps, and e-commerce solutions. Expert in Laravel, React, Next.js & FastAPI.',
+    'Senior Full-Stack Developer with 6 years building scalable booking platforms, SaaS apps, and e-commerce solutions. Expert in Laravel, React, Next.js & FastAPI.',
   openGraph: {
     title: 'Mahavishnu P — Senior Full Stack Developer',
     description:

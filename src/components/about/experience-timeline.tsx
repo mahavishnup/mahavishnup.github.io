@@ -9,32 +9,34 @@ const experiences = [
     title: 'PHP Developer',
     company: 'Hectadata Pvt Ltd · Remote, Malaysia',
     description:
-      'Architecting enterprise-grade applications using Laravel, PHP, and FastAPI. Developing sophisticated AI workflows using LangChain and LangGraph for complex legal analysis and automated summarization. Managing high-throughput message processing with RabbitMQ and database systems with MySQL/PostgreSQL.',
+      'Architected and built scalable enterprise applications using Laravel, FastAPI, React.js, TypeScript, and PostgreSQL across backend, frontend, database, and API layers. Engineered AI-assisted systems for legal analysis, vehicle monitoring, and overload detection including document processing, compliance dashboards, and reporting at scale. Designed and deployed multi-server on-premise and cloud infrastructure with load balancing. Built AI-powered document extraction workflows using LLM APIs, OCR, and structured JSON responses. Optimized REST APIs, PostgreSQL queries, and database structures; implemented asynchronous processing using RabbitMQ and contributed to CI/CD.',
     tech: [
       'Laravel',
       'FastAPI',
-      'LangChain',
-      'LangGraph',
-      'RabbitMQ',
-      'Pinecone',
       'React.js',
+      'TypeScript',
+      'PostgreSQL',
+      'RabbitMQ',
+      'LangChain',
+      'OCR',
     ],
   },
   {
-    year: 'Nov 2020 – Jun 2024',
+    year: 'Sep 2020 – Jun 2024',
     title: 'Web Developer',
     company: 'Byrut Business Solutions · Remote, Andaman',
     description:
-      'Delivered 20+ client-facing tourism and e-commerce projects using Laravel, React.js, MySQL, and Next.js. Built a tourism booking platform with hotel, ferry, cab, and boat modules — used by 25,000+ users/month. Integrated payment gateway and WhatsApp automation for confirmations.',
-    tech: ['Laravel', 'React.js', 'Next.js', 'MySQL', 'Razorpay'],
-  },
-  {
-    year: 'Sep 2020 – Nov 2020',
-    title: 'Web Designer & Web Developer Intern',
-    company: 'Byrut Business Solutions · Remote, Andaman',
-    description:
-      'Developed a Quiz Portal and redesigned client websites using Laravel, JS, HTML/CSS. Improved user experience, reduced page load times, and deployed via GitHub & Heroku.',
-    tech: ['Laravel', 'JavaScript', 'HTML/CSS', 'Heroku'],
+      'Architected and shipped 20+ production applications across tourism, booking, e-commerce, management, and business automation platforms for diverse business requirements. Scaled a tourism booking platform to 25,000+ monthly users, supporting hotel, ferry, cab, and boat bookings. Engineered Laravel REST APIs and admin dashboards, booking engines, and pricing systems. Integrated payment gateways and third-party APIs; optimized MySQL/PostgreSQL databases and queries. Built responsive interfaces using React.js, TypeScript, Inertia.js, and Tailwind CSS; managed production deployments across Linux, Nginx, Laravel Forge, and DigitalOcean.',
+    tech: [
+      'Laravel',
+      'React.js',
+      'Next.js',
+      'Inertia.js',
+      'MySQL',
+      'PostgreSQL',
+      'Tailwind CSS',
+      'DigitalOcean',
+    ],
   },
 ]
 

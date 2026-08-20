@@ -44,7 +44,8 @@ export default function Hero() {
             transition={{ delay: 0.2, duration: 0.5 }}
           >
             <div className="bg-primary/10 text-primary border-primary/20 shadow-primary/5 inline-block rounded-full border px-5 py-2 text-sm font-medium shadow-lg backdrop-blur-md">
-              🚀 Senior Full-Stack Developer · 5+ Years · 20+ Projects
+              🚀 Senior Full Stack Engineer · AI & Backend · 6 Years · 20+
+              Projects
             </div>
           </motion.div>
 
