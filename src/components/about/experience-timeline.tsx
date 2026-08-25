@@ -9,15 +9,18 @@ const experiences = [
     title: 'PHP Developer',
     company: 'Hectadata Pvt Ltd · Remote, Malaysia',
     description:
-      'Architected and built scalable enterprise applications using Laravel, FastAPI, React.js, TypeScript, and PostgreSQL across backend, frontend, database, and API layers. Engineered AI-assisted systems for legal analysis, vehicle monitoring, and overload detection including document processing, compliance dashboards, and reporting at scale. Designed and deployed multi-server on-premise and cloud infrastructure with load balancing. Built AI-powered document extraction workflows using LLM APIs, OCR, and structured JSON responses. Optimized REST APIs, PostgreSQL queries, and database structures; implemented asynchronous processing using RabbitMQ and contributed to CI/CD.',
+      'Developed applications using Laravel, React.js, FastAPI, and PostgreSQL across multiple business domains. Built AI-assisted legal analysis systems using FastAPI, React.js, LangChain, Qdrant, and RAG-based retrieval with multi-agent workflows. Built vehicle monitoring and overload detection systems using Laravel, React.js, Inertia.js, RabbitMQ, and Redis processing millions of records daily. Developed logistics data extraction workflows for scanned images, PDFs, text, and XLSX using OCR, LLM APIs, and structured data processing. Designed and deployed applications across on-premise and cloud environments using Nginx, load balancing, and Bash, while optimizing APIs, database queries, and background processing for reliability and performance.',
     tech: [
       'Laravel',
       'FastAPI',
       'React.js',
+      'Inertia.js',
       'TypeScript',
       'PostgreSQL',
       'RabbitMQ',
+      'Redis',
       'LangChain',
+      'Qdrant',
       'OCR',
     ],
   },
@@ -26,9 +29,10 @@ const experiences = [
     title: 'Web Developer',
     company: 'Byrut Business Solutions · Remote, Andaman',
     description:
-      'Architected and shipped 20+ production applications across tourism, booking, e-commerce, management, and business automation platforms for diverse business requirements. Scaled a tourism booking platform to 25,000+ monthly users, supporting hotel, ferry, cab, and boat bookings. Engineered Laravel REST APIs and admin dashboards, booking engines, and pricing systems. Integrated payment gateways and third-party APIs; optimized MySQL/PostgreSQL databases and queries. Built responsive interfaces using React.js, TypeScript, Inertia.js, and Tailwind CSS; managed production deployments across Linux, Nginx, Laravel Forge, and DigitalOcean.',
+      'Delivered 20+ applications across tourism, booking, e-commerce, management, and business automation. Developed Laravel/PHP REST APIs, booking engines, admin systems, pricing workflows, and scalable business platforms for diverse production requirements. Scaled a tourism booking platform supporting 25,000+ users across hotel, ferry, cab, and boat services. Built React.js/Next.js applications, integrated payment gateways and third-party services, and managed deployments using Nginx, Laravel Forge, and DigitalOcean.',
     tech: [
       'Laravel',
+      'PHP',
       'React.js',
       'Next.js',
       'Inertia.js',

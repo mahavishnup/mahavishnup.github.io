@@ -33,32 +33,38 @@ export default function About() {
             <h2 className="text-3xl font-bold md:text-5xl">About Me</h2>
             <p className="text-muted-foreground text-lg leading-relaxed">
               I&apos;m a Senior Full Stack Engineer with{' '}
-              <span className="text-primary font-medium">6 years</span> of
-              experience architecting and building enterprise applications, REST
-              APIs, and AI-powered systems. Strong expertise in Laravel, PHP,
-              React.js, FastAPI, Python, PostgreSQL, and cloud infrastructure.
+              <span className="text-primary font-medium">6+ years</span> of
+              experience building web applications and REST APIs using
+              PHP/Laravel, React.js, PostgreSQL/MySQL, and FastAPI/Python.
+              Experienced in AI-assisted applications, OCR, asynchronous
+              processing, third-party integrations, and cloud/on-premise
+              deployments.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Experienced in database optimization, distributed systems,
-              asynchronous processing, AI/LLM integrations, and production
-              deployments — delivering{' '}
+              Built AI-assisted legal analysis systems, vehicle monitoring &amp;
+              overload detection platforms, enterprise booking suites, and
+              logistics data extraction workflows — delivering{' '}
               <span className="text-primary font-medium">
-                20+ production projects
+                20+ production applications
               </span>{' '}
-              across tourism, e-commerce, legal tech, and enterprise platforms.
+              across legal tech, logistics, tourism, e-commerce, and enterprise
+              automation.
             </p>
 
             <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">
-              {['Laravel', 'FastAPI', 'React.js / Next.js', 'Python AI'].map(
-                (skill) => (
-                  <div
-                    key={skill}
-                    className="bg-card border-border/50 hover:border-primary/50 rounded-xl border p-4 text-center font-medium transition-colors"
-                  >
-                    {skill}
-                  </div>
-                )
-              )}
+              {[
+                'Laravel / PHP',
+                'FastAPI / Python',
+                'React.js / Next.js',
+                'AI & LLM',
+              ].map((skill) => (
+                <div
+                  key={skill}
+                  className="bg-card border-border/50 hover:border-primary/50 rounded-xl border p-4 text-center font-medium transition-colors"
+                >
+                  {skill}
+                </div>
+              ))}
             </div>
           </div>
         </motion.div>

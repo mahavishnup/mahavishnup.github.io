@@ -28,6 +28,62 @@ export interface Service {
 
 export const projects: Project[] = [
   {
+    id: 'ai-search-engine',
+    title: 'AI Search Engine',
+    slug: 'ai-search-engine',
+    description:
+      'Enterprise semantic search platform using React, TypeScript, FastAPI, PostgreSQL, FAISS/Qdrant, LangChain, OCR, hybrid search, RAG, multi-agent routing, and citation-based responses.',
+    techStack: [
+      'React',
+      'TypeScript',
+      'FastAPI',
+      'PostgreSQL',
+      'Qdrant',
+      'FAISS',
+      'LangChain',
+      'OCR',
+      'RAG',
+    ],
+    coverImage: '/assets/ai-search-engine.png',
+    featured: true,
+    createdAt: '2025-01-01T00:00:00Z',
+  },
+  {
+    id: 'whatsapp-chatbot',
+    title: 'WhatsApp Chatbot',
+    slug: 'whatsapp-chatbot',
+    description:
+      'Production chatbot using FastAPI and Meta WhatsApp Cloud API with FAQ automation, customer workflows, escalation, broadcast messaging, analytics, and agent inbox.',
+    techStack: [
+      'FastAPI',
+      'Python',
+      'Meta WhatsApp Cloud API',
+      'PostgreSQL',
+      'Redis',
+    ],
+    coverImage: '/assets/whatsapp-chatbot.png',
+    featured: true,
+    createdAt: '2024-12-01T00:00:00Z',
+  },
+  {
+    id: 'loan-approval-system',
+    title: 'Loan Approval System',
+    slug: 'loan-approval-system',
+    description:
+      'Full-stack loan application and approval platform with separate frontend, backend, and AI-agent services for application processing and automated approval workflows.',
+    techStack: [
+      'React',
+      'TypeScript',
+      'FastAPI',
+      'PostgreSQL',
+      'LangChain',
+      'Python',
+    ],
+    coverImage: '/assets/loan-approval-system.png',
+    featured: true,
+    createdAt: '2024-11-01T00:00:00Z',
+  },
+  {
     id: '1',
     title: 'AI-Powered Agentic Legal System',
     slug: 'ai-agentic-legal-system',
