@@ -12,6 +12,7 @@ const envSchema = z.object({
   NEXT_PUBLIC_NEWSLETTER_URL: z.string().url().optional(),
   NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION: z.string().optional(),
   NEXT_PUBLIC_GA_ID: z.string().optional(),
+  NEXT_PUBLIC_GTM_ID: z.string().optional(),
 })
 
 const processEnv = {
@@ -22,6 +23,7 @@ const processEnv = {
   NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION:
     process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
   NEXT_PUBLIC_GA_ID: process.env.NEXT_PUBLIC_GA_ID,
+  NEXT_PUBLIC_GTM_ID: process.env.NEXT_PUBLIC_GTM_ID,
 }
 
 // Validate environment variables

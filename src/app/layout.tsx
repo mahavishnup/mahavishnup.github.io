@@ -15,7 +15,7 @@ const geistMono = Geist_Mono({
   subsets: ['latin'],
 })
 
-import Script from 'next/script'
+import { Analytics } from '@/components/analytics'
 
 const BASE_URL = env.NEXT_PUBLIC_SITE_URL
 
@@ -128,8 +128,6 @@ export default function RootLayout({
     url: `${BASE_URL}#Contacts`,
   }
 
-  const gaId = env.NEXT_PUBLIC_GA_ID
-
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -148,23 +146,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{ __html: JSON.stringify(contactLd) }}
         />
 
-        {/* Google Analytics (gtag.js) */}
-        {gaId && (
-          <>
-            <Script
-              src={`https://www.googletagmanager.com/gtag/js?id=${gaId}`}
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', '${gaId}');
-              `}
-            </Script>
-          </>
-        )}
+        {/* Analytics: GTM + GA via @next/third-parties */}
+        <Analytics />
 
         <ThemeProvider
           attribute="class"
