@@ -34,8 +34,8 @@ export const metadata: Metadata = {
     apple: [{ url: '/apple-touch-icon.png' }],
   },
   title: {
-    default: 'Mahavishnu P — Senior Full Stack Engineer | AI & Backend',
-    template: '%s | Mahavishnu P',
+    default: 'Mahavishnu Ponnusamy — Senior Full Stack Engineer | AI & Backend',
+    template: '%s | Mahavishnu Ponnusamy',
   },
   description:
     'Senior Full Stack Engineer with 6 years of experience architecting enterprise applications, REST APIs, and AI-powered systems. Expert in Laravel, FastAPI, Python, React.js, PostgreSQL, and cloud infrastructure. Experienced in AI/LLM integrations and production deployments.',
@@ -58,14 +58,14 @@ export const metadata: Metadata = {
     'Tourism',
     'Tamil Nadu',
   ],
-  authors: [{ name: 'Mahavishnu P', url: BASE_URL }],
-  creator: 'Mahavishnu P',
+  authors: [{ name: 'Mahavishnu Ponnusamy', url: BASE_URL }],
+  creator: 'Mahavishnu Ponnusamy',
   openGraph: {
     type: 'website',
     locale: 'en_US',
     url: BASE_URL,
     siteName: 'Mahavishnu — Engineering Scalable Web Solutions',
-    title: 'Mahavishnu P — Senior Full Stack Engineer | AI & Backend',
+    title: 'Mahavishnu Ponnusamy — Senior Full Stack Engineer | AI & Backend',
     description:
       'Senior Full Stack Engineer specializing in Laravel, FastAPI, React.js, Python AI systems, and cloud infrastructure. Building scalable enterprise solutions.',
     images: [
@@ -89,7 +89,7 @@ export const metadata: Metadata = {
     follow: true,
   },
   appleWebApp: {
-    title: 'Mahavishnu P',
+    title: 'Mahavishnu Ponnusamy',
     statusBarStyle: 'default',
     capable: true,
   },
@@ -103,7 +103,7 @@ export default function RootLayout({
   const jsonLd = {
     '@context': 'https://schema.org',
     '@type': 'Person',
-    name: 'Mahavishnu P',
+    name: 'Mahavishnu Ponnusamy',
     url: BASE_URL,
     jobTitle: 'Senior Full Stack Engineer',
     description:
@@ -122,7 +122,7 @@ export default function RootLayout({
   const contactLd = {
     '@context': 'https://schema.org',
     '@type': 'ContactPage',
-    name: 'Contact Mahavishnu P',
+    name: 'Contact Mahavishnu Ponnusamy',
     description:
       'Get in touch with Mahavishnu for scalable web development, Laravel consulting, or React projects.',
     url: `${BASE_URL}#Contacts`,

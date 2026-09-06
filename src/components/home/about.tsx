@@ -34,21 +34,18 @@ export default function About() {
             <p className="text-muted-foreground text-lg leading-relaxed">
               I&apos;m a Senior Full Stack Engineer with{' '}
               <span className="text-primary font-medium">6+ years</span> of
-              experience building web applications and REST APIs using
-              PHP/Laravel, React.js, PostgreSQL/MySQL, and FastAPI/Python.
-              Experienced in AI-assisted applications, OCR, asynchronous
-              processing, third-party integrations, and cloud/on-premise
-              deployments.
+              experience building production web applications, REST APIs, and
+              business platforms using PHP/Laravel, React.js/TypeScript,
+              FastAPI/Python, and PostgreSQL/MySQL.
             </p>
             <p className="text-muted-foreground text-lg leading-relaxed">
-              Built AI-assisted legal analysis systems, vehicle monitoring &amp;
-              overload detection platforms, enterprise booking suites, and
-              logistics data extraction workflows — delivering{' '}
+              Delivered{' '}
               <span className="text-primary font-medium">
                 20+ production applications
               </span>{' '}
-              across legal tech, logistics, tourism, e-commerce, and enterprise
-              automation.
+              supporting 25,000+ users and millions of records — with hands-on
+              experience in AI-assisted automation, RAG, multi-agent workflows,
+              API integrations, and end-to-end cloud and on-premise deployment.
             </p>
 
             <div className="mt-8 grid grid-cols-2 gap-4 md:grid-cols-4">

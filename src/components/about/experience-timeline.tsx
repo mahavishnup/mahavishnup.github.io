@@ -7,9 +7,9 @@ const experiences = [
   {
     year: 'Jul 2024 – Present',
     title: 'PHP Developer',
-    company: 'Hectadata Pvt Ltd · Remote, Malaysia',
+    company: 'Hectadata India Technology Consulting Pvt Ltd · Remote, Malaysia',
     description:
-      'Developed applications using Laravel, React.js, FastAPI, and PostgreSQL across multiple business domains. Built AI-assisted legal analysis systems using FastAPI, React.js, LangChain, Qdrant, and RAG-based retrieval with multi-agent workflows. Built vehicle monitoring and overload detection systems using Laravel, React.js, Inertia.js, RabbitMQ, and Redis processing millions of records daily. Developed logistics data extraction workflows for scanned images, PDFs, text, and XLSX using OCR, LLM APIs, and structured data processing. Designed and deployed applications across on-premise and cloud environments using Nginx, load balancing, and Bash, while optimizing APIs, database queries, and background processing for reliability and performance.',
+      'Built production applications using PHP, Laravel, React.js, FastAPI, and PostgreSQL with asynchronous processing across multiple business domains. Developed an AI-assisted legal analysis system using FastAPI, LangChain, and Qdrant with RAG-based retrieval and multi-agent workflows. Built vehicle monitoring and overload detection systems using Laravel, React.js, Inertia.js, RabbitMQ, and Redis, processing millions of records daily. Developed logistics extraction workflows for scanned images, PDFs, text, and XLSX using OCR, LLM APIs, and structured data processing. Designed and deployed applications across cloud and on-premises environments using Nginx, load balancing, Bash, and performance optimization.',
     tech: [
       'Laravel',
       'FastAPI',
@@ -25,11 +25,11 @@ const experiences = [
     ],
   },
   {
-    year: 'Sep 2020 – Jun 2024',
+    year: 'Nov 2020 – Jun 2024',
     title: 'Web Developer',
-    company: 'Byrut Business Solutions · Remote, Andaman',
+    company: 'Byrut Business Solutions LLP · Remote, Andaman',
     description:
-      'Delivered 20+ applications across tourism, booking, e-commerce, management, and business automation. Developed Laravel/PHP REST APIs, booking engines, admin systems, pricing workflows, and scalable business platforms for diverse production requirements. Scaled a tourism booking platform supporting 25,000+ users across hotel, ferry, cab, and boat services. Built React.js/Next.js applications, integrated payment gateways and third-party services, and managed deployments using Nginx, Laravel Forge, and DigitalOcean.',
+      'Delivered 20+ production applications across tourism, booking, e-commerce, management, and business automation — driving end-to-end development, API integrations, performance improvements, and deployments. Built Laravel/PHP REST APIs, booking engines, admin systems, pricing workflows, and business platforms. Scaled a tourism booking platform supporting 25,000+ users across hotel, ferry, cab, and boat services. Built React.js/Next.js applications, integrated payment gateways and third-party services, and managed deployments using Nginx, Laravel Forge, and DigitalOcean.',
     tech: [
       'Laravel',
       'PHP',

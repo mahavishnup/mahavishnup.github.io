@@ -127,8 +127,7 @@ export default function SkillsServices() {
             Skills & Services
           </h2>
           <p className="text-muted-foreground max-w-xl md:text-xl/relaxed">
-            Leveraging cutting-edge technologies to deliver exceptional digital
-            solutions.
+            Technologies I work with daily and services I offer.
           </p>
         </div>
 

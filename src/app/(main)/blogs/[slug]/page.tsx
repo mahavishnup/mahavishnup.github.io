@@ -88,12 +88,12 @@ export default async function BlogPostPage({ params }: BlogPostPageProps) {
     dateModified: post.updatedAt,
     author: {
       '@type': 'Person',
-      name: 'Mahavishnu P',
+      name: 'Mahavishnu Ponnusamy',
       url: BASE_URL,
     },
     publisher: {
       '@type': 'Person',
-      name: 'Mahavishnu P',
+      name: 'Mahavishnu Ponnusamy',
       url: BASE_URL,
     },
     url: `${BASE_URL}/blogs/${slug}`,

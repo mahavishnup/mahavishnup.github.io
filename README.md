@@ -127,7 +127,7 @@ This project is open source and available under the [MIT License](LICENSE).
 
 ## 👤 Author
 
-**Mahavishnu P**
+**Mahavishnu Ponnusamy**
 
 - [GitHub](https://github.com/mahavishnup)
 - [LinkedIn](https://www.linkedin.com/in/developermahavishnu)

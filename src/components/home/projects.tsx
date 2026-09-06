@@ -24,8 +24,8 @@ export default function Projects() {
             Featured Projects
           </h2>
           <p className="text-muted-foreground max-w-xl md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed">
-            A showcase of my recent work, featuring full-stack applications,
-            open-source contributions, and technical experiments.
+            A selection of production applications and platforms I&apos;ve built
+            across AI, logistics, tourism, and enterprise automation.
           </p>
         </div>
 

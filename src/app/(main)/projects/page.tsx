@@ -21,8 +21,8 @@ export default function ProjectsPage() {
             My Projects
           </h1>
           <p className="text-muted-foreground mx-auto max-w-2xl md:text-xl/relaxed">
-            From simple scripts to complex SaaS platforms, here are some of the
-            projects I&apos;ve built to solve real-world problems.
+            Production applications I&apos;ve built across AI, logistics,
+            tourism, e-commerce, and enterprise automation.
           </p>
         </div>
 

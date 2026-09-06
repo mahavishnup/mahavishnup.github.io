@@ -5,13 +5,13 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 export const metadata = {
-  title: 'About Us',
+  title: 'About',
   description:
-    'Senior Laravel-focused Full-Stack Developer with 6 years of experience. Learn about my journey, skills, and professional experience.',
+    'Senior Full Stack Engineer with 6+ years of experience in PHP/Laravel, React.js, TypeScript, and FastAPI. Based in Salem, Tamil Nadu, India.',
   openGraph: {
     title: 'About Mahavishnu',
     description:
-      'Senior Full-Stack Developer with 6 years building scalable web solutions.',
+      'Senior Full Stack Engineer with 6+ years building production web applications, REST APIs, and business platforms.',
   },
 }
 
@@ -25,9 +25,8 @@ export default function AboutPage() {
             About Me
           </h1>
           <p className="text-muted-foreground max-w-2xl text-lg md:text-xl">
-            Passionate about building scalable, high-performance web
-            applications. Bridging the gap between robust backend architecture
-            and modern frontend experiences.
+            6+ years of experience building production web applications, REST
+            APIs, and business platforms. Based in Salem, Tamil Nadu, India.
           </p>
         </div>
 
@@ -51,27 +50,23 @@ export default function AboutPage() {
             <h2 className="text-3xl font-bold">The Journey</h2>
             <div className="text-muted-foreground space-y-4 text-lg">
               <p>
-                Hello! I&apos;m Mahavishnu, a **Senior Full-Stack & AI
-                Engineer** based in Tamil Nadu, India. My journey in technology
-                began with a B.Tech in IT at Paavai Engineering College
-                (2017–21), where I developed a deep passion for architecting
-                complex, problem-solving software systems.
+                I&apos;m Mahavishnu, a Senior Full Stack Engineer based in
+                Salem, Tamil Nadu, India. I completed my B.Tech in Information
+                Technology at Paavai Engineering College (2017–2021) and have
+                been building production web applications since 2020.
               </p>
               <p>
-                Over the past 6+ years, I have specialized in bridging the gap
-                between robust backend ecosystems (Laravel, FastAPI) and
-                cutting-edge technologies. At Byrut Business Solutions, I led
-                the development of an enterprise-scale tourism booking suite
-                serving 25,000+ users monthly, managing everything from payment
-                integrations to multi-service logistics.
+                At Byrut Business Solutions LLP, I delivered 20+ production
+                applications across tourism, booking, e-commerce, and business
+                automation — including a platform supporting 25,000+ users
+                across hotel, ferry, cab, and boat services.
               </p>
               <p>
-                Since joining Hectadata Pvt Ltd in 2024, I have focused on the
-                frontier of Agentic AI. I currently design sophisticated
-                workflows using LangChain and LangGraph, implement the Model
-                Context Protocol (MCP) for tool interoperability, and engineer
-                systems that integrate vehicle data with intelligent AI
-                summarization engines and reliable message queues.
+                Since July 2024 at Hectadata India Technology Consulting Pvt
+                Ltd, I&apos;ve been building AI-assisted legal analysis systems,
+                vehicle monitoring and overload detection platforms, and
+                logistics data extraction workflows using OCR, LLM APIs,
+                LangChain, and Qdrant.
               </p>
             </div>
 
@@ -173,11 +168,9 @@ export default function AboutPage() {
           </h2>
           <div className="grid gap-4 sm:grid-cols-2">
             {[
-              'Database Management System — Udemy',
-              'Business Model Workshop — Eureka, IIT Bombay',
-              'Published International Conference Paper (Blockchain)',
-              '2nd Place: AI National Level Paper Presentation',
-              'Smart India Hackathon 2020 Participant',
+              'Conference paper published on blockchain-based invoice factoring & secure credit-based training',
+              '2nd Place — National Level Technical Symposium Paper Presentation on Artificial Intelligence',
+              'Certificate of Participation — Smart India Hackathon 2020',
             ].map((award, i) => (
               <div
                 key={i}

@@ -44,8 +44,8 @@ export default function Hero() {
             transition={{ delay: 0.2, duration: 0.5 }}
           >
             <div className="bg-primary/10 text-primary border-primary/20 shadow-primary/5 inline-block rounded-full border px-5 py-2 text-sm font-medium shadow-lg backdrop-blur-md">
-              🚀 Senior Full Stack Engineer · PHP, Laravel, React.js & FastAPI ·
-              6+ Years
+              Senior Full Stack Engineer · PHP, Laravel, React.js & FastAPI · 6+
+              Years
             </div>
           </motion.div>
 
@@ -66,21 +66,22 @@ export default function Hero() {
             transition={{ delay: 0.4, duration: 0.6 }}
             className="text-muted-foreground mx-auto max-w-2xl text-base leading-relaxed font-light sm:text-lg md:text-xl lg:text-2xl"
           >
-            Architecting scalable SaaS platforms,{' '}
-            <span className="text-foreground font-semibold">
-              AI-assisted workflows
-            </span>{' '}
-            & enterprise booking systems with{' '}
+            Building production web applications, REST APIs, and business
+            platforms with{' '}
             <span className="text-foreground decoration-primary/50 font-semibold underline decoration-2 underline-offset-4">
               Laravel
             </span>
             ,{' '}
             <span className="text-foreground font-semibold underline decoration-blue-500/50 decoration-2 underline-offset-4">
               React / Next.js
-            </span>{' '}
-            &{' '}
+            </span>
+            ,{' '}
             <span className="text-foreground font-semibold underline decoration-purple-500/50 decoration-2 underline-offset-4">
               FastAPI
+            </span>{' '}
+            and hands-on experience in{' '}
+            <span className="text-foreground font-semibold">
+              AI automation, RAG, and multi-agent workflows
             </span>
             .
           </motion.p>

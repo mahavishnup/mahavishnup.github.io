@@ -172,7 +172,7 @@ export const projects: Project[] = [
       'A privacy-focused internal search application built with PHP. Designed for secure, anonymous data retrieval within enterprise environments, focusing on speed and data confidentiality.',
     techStack: ['PHP', 'MySQL', 'JavaScript', 'Tailwind CSS'],
     coverImage: '/assets/search-engine.png',
-    featured: true,
+    featured: false,
     createdAt: '2021-04-15T00:00:00Z',
   },
   {
@@ -183,7 +183,7 @@ export const projects: Project[] = [
       'An AI-powered chatbot using Natural Language Processing (NLP) techniques and conversational workflows to provide intelligent responses and task automation.',
     techStack: ['Python', 'NLP', 'OpenAI', 'FastAPI'],
     coverImage: '/assets/nlp-chatbot.png',
-    featured: true,
+    featured: false,
     createdAt: '2022-03-10T00:00:00Z',
   },
   {
@@ -290,10 +290,10 @@ export const projects: Project[] = [
     title: 'Custom MCP Server for Enterprise Context',
     slug: 'custom-mcp-server-enterprise-context',
     description:
-      'A specialized Model Context Protocol (MCP) server designed to securely expose enterprise databases and internal APIs to AI agents. Features granular permission control, query sanitization, and seamless integration with Claude Desktop and custom LangGraph agents.',
+      'A Model Context Protocol (MCP) server designed to securely expose enterprise databases and internal APIs to AI agents. Features granular permission control, query sanitization, and integration with LangGraph agents.',
     techStack: ['Node.js', 'TypeScript', 'MCP SDK', 'PostgreSQL', 'Docker'],
     coverImage: '/assets/mcp-header.png',
-    featured: true,
+    featured: false,
     createdAt: '2024-11-10T00:00:00Z',
   },
 ]
