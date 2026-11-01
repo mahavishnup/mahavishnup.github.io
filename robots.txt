@@ -1,0 +1,9 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://mahavishnup.github.io/sitemap.xml
+
+# Block access to sensitive files
+Disallow: /.env
+Disallow: /node_modules/
