@@ -109,7 +109,11 @@ export default function Hero() {
               className="rounded-full px-6 backdrop-blur-sm md:px-8"
               asChild
             >
-              <Link href="/Mahavishnu_P_CV.pdf" target="_blank" download>
+              <Link
+                href="/Mahavishnu_Ponnusamy_Senior_FullStack_Engineer_Resume.pdf"
+                target="_blank"
+                download
+              >
                 <Download className="mr-2 h-4 w-4" />
                 Resume
               </Link>

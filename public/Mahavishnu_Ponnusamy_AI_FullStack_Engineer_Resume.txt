@@ -1,0 +1,49 @@
+﻿Mahavishnu Ponnusamy
+AI Full-Stack Engineer | FastAPI, Python · LangChain, LangGraph · Laravel, PHP · React.js
+Salem, Tamil Nadu, India   |   +91-6380578435   |   selvamvishnu25@gmail.com
+linkedin.com/in/developermahavishnu   |   github.com/mahavishnup   |   mahavishnup.github.io
+PROFESSIONAL SUMMARY
+  
+
+AI Full-Stack Engineer with 6+ years in production web systems and 2+ years building AI-powered platforms using FastAPI, LangChain, and LangGraph. Shipped an AI legal research platform with multi-agent orchestration, hybrid vector search (Qdrant, Pinecone), and RAG responses, reducing document retrieval latency by ~40%. Delivered 20+ production applications across distributed queues (RabbitMQ), high-availability Linux environments, and full-stack React.js/Laravel architectures.
+TECHNICAL SKILLS
+  
+
+AI & Retrieval: LangChain, LangGraph, RAG, OpenAI API, Anthropic, FastMCP, Vector Search (Qdrant), OCR  
+Languages & Core: Python, PHP, JavaScript, TypeScript, Bash, SQL, OOP  
+Frameworks & UI: FastAPI, Laravel, React.js, Next.js, Inertia.js, Tailwind CSS  
+Databases & Cache: PostgreSQL, MySQL, Redis, MongoDB, Qdrant  
+DevOps, Cloud & Testing: AWS, DigitalOcean, Docker, Nginx, Linux, CI/CD, Pytest, PHPUnit  
+PROFESSIONAL EXPERIENCE
+  
+
+Hectadata India Technology Consulting Pvt Ltd                                                                                           Remote, Malaysia
+PHP Developer                                                                                                                                                        Jul 2024 - Present
+Built an AI legal research platform backend (FastAPI, Python 3.12) using LangGraph multi-agent orchestration, hybrid vector retrieval (Pinecone dense + Qdrant BM25 sparse), and real-time Socket.IO chat, cutting case research latency by ~40%.  
+Architected a clean Onion Architecture in FastAPI with SQLAlchemy 2 async, Pydantic v2, Alembic, MongoDB, and FastMCP server tools, securing 10+ internal user roles.  
+Engineered an end-to-end logistics document extraction pipeline using OCR across DOCX/PDF/images and pluggable LLM routing, processing 500+ documents monthly.  
+Contributed to a real-time vehicle enforcement platform (Laravel 12, RabbitMQ, PostgreSQL NOTIFY) processing lakhs of records daily (10+ rec/sec) ensuring zero data loss and 100% data integrity across 5+ remote sensor stations.  
+Deployed and maintained distributed services across cloud and on-premises Linux servers using Nginx load balancing, reverse proxy, Docker, and Supervisor with 99.9% uptime.  
+Byrut Business Solutions LLP                                                                                        Remote, Andaman and Nicobar Islands
+Web Developer                                                                                                                                                  Nov 2020 - Jun 2024
+Delivered 20+ production web applications across tourism, e-commerce, and business automation, driving end-to-end architecture, API integrations, and deployments over 4 years.  
+Architected and scaled a multi-service tourism booking platform to 25,000+ monthly users (hotel, ferry, cab, boat) using Laravel, React.js, and MySQL, hosted on AWS.  
+Developed dynamic tour package pricing logic and ferry booking engines deployed on Laravel Cloud; integrated FPDF generating 1,000+ monthly client quotations and Razorpay payment gateway.  
+Deployed and managed 20+ client applications on DigitalOcean droplets via Laravel Forge, utilizing Spaces for object storage and CDN for global asset delivery.  
+Built React.js / Next.js administrative portals and multi-vendor e-commerce platforms supporting 30+ active vendors with scheduled weekly payout workflows.  
+PROJECTS
+  
+
+AI Search Engine — Enterprise semantic search platform (FastAPI, React, Qdrant, LangChain, RAG) with hybrid vector retrieval, delivering sub-second (<500ms) query responses across document collections.     
+WhatsApp Chatbot — Production chatbot (FastAPI, Meta WhatsApp Cloud API) for a financial cooperative automating 80%+ of incoming loan FAQs, human escalation, and broadcast messaging with a React admin SPA.  
+EDUCATION
+  
+
+Paavai Engineering College                                                                                                            Namakkal, Tamil Nadu, India
+B.Tech in Information Technology CGPA: 7.75/10                       Aug 2017 - June 2021        
+AWARDS/CERTIFICATION
+  
+
+Research Publication: Published conference paper on Blockchain-based invoice factoring and secure credit-based training.  
+2nd Place Winner: National-level AI technical symposium paper presentation on Artificial Intelligence.  
+Smart India Hackathon: Selected and participated in Smart India Hackathon 2020 nationwide finals.

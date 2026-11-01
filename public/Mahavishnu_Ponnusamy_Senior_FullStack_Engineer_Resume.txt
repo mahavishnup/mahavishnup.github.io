@@ -1,0 +1,49 @@
+﻿Mahavishnu Ponnusamy
+Senior Full-Stack Engineer | Laravel, PHP · React.js, Next.js · FastAPI, Python
+Salem, Tamil Nadu, India   |   +91-6380578435   |   selvamvishnu25@gmail.com
+linkedin.com/in/developermahavishnu   |   github.com/mahavishnup   |   mahavishnup.github.io
+PROFESSIONAL SUMMARY
+  
+
+Senior Full-Stack Engineer with 6+ years building scalable web applications, REST APIs, and distributed systems using Laravel/PHP, React.js/Next.js, and PostgreSQL/MySQL. Delivered 20+ production systems handling lakhs of records daily (10+ rec/sec) and scaling platforms to 25,000+ monthly users with 99.9% uptime. Experienced in Nginx load balancing, cloud/on-premises Linux environments, and integrating AI workflows (FastAPI, LangChain, RAG).
+TECHNICAL SKILLS
+  
+
+Languages & Core: PHP, JavaScript, TypeScript, Python, Bash, SQL, OOP  
+Frameworks & UI: Laravel, React.js, Next.js, Inertia.js, FastAPI, LangChain, Tailwind CSS  
+Databases & Cache: PostgreSQL, MySQL, Redis, MongoDB, Qdrant  
+DevOps & Cloud: AWS, DigitalOcean, Docker, Nginx, Linux, Supervisor, CI/CD, GitHub Actions  
+Tools & Testing: RabbitMQ, Laravel Horizon, OCR, OpenAI API, REST APIs, PHPUnit, Pytest  
+PROFESSIONAL EXPERIENCE
+  
+
+Hectadata India Technology Consulting Pvt Ltd                                                                                           Remote, Malaysia
+PHP Developer                                                                                                                                                        Jul 2024 - Present
+Architected a real-time vehicle enforcement platform (Laravel 12, React 19, Inertia.js) processing lakhs of records daily (10+ rec/sec) via RabbitMQ; built a 20-state engine and SOAP registry API, reducing audit time by ~60%.  
+Engineered dual-mode ingestion (RabbitMQ real-time pipeline + PostgreSQL NOTIFY polling fallback) ensuring zero data loss and 100% data integrity across 5+ remote sensor stations.  
+Developed an AI legal research platform backend using FastAPI, LangChain, and Qdrant vector search, reducing legal document research latency by ~40%.  
+Integrated CUPS server-side print automation and enterprise authentication (RBAC, 2FA) using Laravel Sanctum, securing 10+ internal user roles.  
+Deployed and maintained distributed services across cloud and on-premises Linux servers using Nginx load balancing, reverse proxy, Docker, and Supervisor with 99.9% uptime.  
+Byrut Business Solutions LLP                                                                                        Remote, Andaman and Nicobar Islands
+Web Developer                                                                                                                                                  Nov 2020 - Jun 2024
+Delivered 20+ production web applications across tourism, e-commerce, and business automation, driving end-to-end architecture, API integrations, and deployments over 4 years.  
+Architected and scaled a multi-service tourism booking platform to 25,000+ monthly users (hotel, ferry, cab, boat) using Laravel, React.js, and MySQL, hosted on AWS.  
+Developed dynamic tour package pricing logic and ferry booking engines deployed on Laravel Cloud; integrated FPDF generating 1,000+ automated monthly quotations and Razorpay payment gateway.  
+Deployed and managed 20+ client applications on DigitalOcean droplets via Laravel Forge, utilizing Spaces for object storage and CDN for global asset delivery.  
+Built React.js / Next.js administrative portals and multi-vendor e-commerce platforms supporting 30+ active vendors with automated weekly payout workflows.  
+PROJECTS
+  
+
+WhatsApp Chatbot — Production chatbot (FastAPI, Meta WhatsApp Cloud API) for a financial cooperative automating 80%+ of incoming loan FAQs, human escalation, and broadcast messaging with a React admin SPA.       
+AI Search Engine — Enterprise semantic search platform (FastAPI, React, Qdrant, LangChain, RAG) with hybrid vector retrieval, delivering sub-second (<500ms) query responses across document collections.  
+EDUCATION
+  
+
+Paavai Engineering College                                                                                                            Namakkal, Tamil Nadu, India
+B.Tech in Information Technology CGPA: 7.75/10                       Aug 2017 - June 2021        
+AWARDS/CERTIFICATION
+  
+
+Research Publication: Published conference paper on Blockchain-based invoice factoring and secure credit-based training.  
+2nd Place Winner: National-level AI technical symposium paper presentation on Artificial Intelligence.  
+Smart India Hackathon: Selected and participated in Smart India Hackathon 2020 nationwide finals.

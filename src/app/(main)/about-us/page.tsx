@@ -83,7 +83,11 @@ export default function AboutPage() {
                 size="lg"
                 className="rounded-full"
               >
-                <Link href="/Mahavishnu_P_CV.pdf" target="_blank" download>
+                <Link
+                  href="/Mahavishnu_Ponnusamy_Senior_FullStack_Engineer_Resume.pdf"
+                  target="_blank"
+                  download
+                >
                   <Download className="mr-2 h-4 w-4" />
                   Download CV
                 </Link>
