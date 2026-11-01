@@ -1,0 +1,880 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mahavishnu Ponnusamy — Senior Full-Stack Engineer</title>
+  <meta name="description" content="Senior Full-Stack Engineer · 6+ years · Laravel/PHP · React.js · FastAPI · AI/LLM · Open to Senior roles in Chennai, Bangalore & Remote." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['Inter', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+          colors: {
+            accent: '#6366f1',
+            'accent-dark': '#4f46e5',
+            neon: '#a78bfa',
+            cyan: '#22d3ee',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    :root {
+      --accent: #6366f1;
+      --neon: #a78bfa;
+      --cyan: #22d3ee;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    /* ─── BACKGROUND CANVAS ─── */
+    body { background: #09090b; color: #e4e4e7; font-family: 'Inter', sans-serif; }
+    #bg-canvas { position: fixed; inset: 0; z-index: 0; pointer-events: none; }
+
+    /* ─── NOISE TEXTURE ─── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0; z-index: 0;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='300' height='300' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+    }
+
+    /* ─── GRADIENT ORBs ─── */
+    .orb {
+      position: fixed; border-radius: 50%; filter: blur(80px); opacity: 0.18; pointer-events: none; z-index: 0;
+      animation: orbFloat 12s ease-in-out infinite;
+    }
+    .orb-1 { width: 600px; height: 600px; background: radial-gradient(circle, #6366f1, transparent); top: -200px; left: -100px; animation-delay: 0s; }
+    .orb-2 { width: 500px; height: 500px; background: radial-gradient(circle, #a78bfa, transparent); bottom: -150px; right: -100px; animation-delay: -4s; }
+    .orb-3 { width: 400px; height: 400px; background: radial-gradient(circle, #22d3ee, transparent); top: 40%; left: 60%; animation-delay: -8s; }
+    @keyframes orbFloat {
+      0%, 100% { transform: translate(0, 0) scale(1); }
+      33% { transform: translate(30px, -40px) scale(1.05); }
+      66% { transform: translate(-20px, 20px) scale(0.95); }
+    }
+
+    /* ─── GLASS ─── */
+    .glass {
+      background: rgba(255,255,255,0.03);
+      backdrop-filter: blur(12px);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+    .glass-light {
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255,255,255,0.1);
+    }
+
+    /* ─── GRADIENT TEXT ─── */
+    .grad-text {
+      background: linear-gradient(135deg, #6366f1 0%, #a78bfa 50%, #22d3ee 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .grad-text-warm {
+      background: linear-gradient(135deg, #f59e0b 0%, #ef4444 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ─── NAV ─── */
+    nav { position: fixed; top: 0; width: 100%; z-index: 100; }
+    .nav-inner {
+      background: rgba(9,9,11,0.7);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .nav-link { position: relative; color: #a1a1aa; transition: color 0.2s; }
+    .nav-link::after { content: ''; position: absolute; bottom: -2px; left: 0; width: 0; height: 1.5px; background: var(--accent); transition: width 0.25s ease; }
+    .nav-link:hover { color: #fff; }
+    .nav-link:hover::after { width: 100%; }
+
+    /* ─── HERO ─── */
+    .hero-section { position: relative; min-height: 100vh; display: flex; align-items: center; justify-content: center; z-index: 1; }
+
+    /* Terminal window */
+    .terminal {
+      background: #0d0d14;
+      border: 1px solid rgba(99,102,241,0.3);
+      border-radius: 12px;
+      box-shadow: 0 0 40px rgba(99,102,241,0.15), 0 0 80px rgba(99,102,241,0.05);
+      overflow: hidden;
+    }
+    .terminal-bar {
+      background: #18181f;
+      padding: 10px 16px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+    }
+    .dot { width: 12px; height: 12px; border-radius: 50%; }
+    .dot-red { background: #ff5f57; }
+    .dot-yellow { background: #febc2e; }
+    .dot-green { background: #28c840; }
+    .terminal-title { font-family: 'JetBrains Mono', monospace; font-size: 12px; color: #52525b; margin-left: auto; margin-right: auto; }
+    .terminal-body { padding: 24px 28px; font-family: 'JetBrains Mono', monospace; font-size: 13px; line-height: 1.8; }
+    .prompt-line { display: flex; align-items: flex-start; gap: 0; }
+    .prompt-sym { color: #6366f1; user-select: none; }
+    .prompt-cmd { color: #a78bfa; }
+    .out-key { color: #22d3ee; }
+    .out-val { color: #86efac; }
+    .out-str { color: #fbbf24; }
+    .out-num { color: #f87171; }
+    .out-comment { color: #52525b; }
+    .cursor-blink { display: inline-block; width: 8px; height: 14px; background: #6366f1; vertical-align: middle; margin-left: 2px; animation: blink 1s step-end infinite; }
+    @keyframes blink { 0%,100% { opacity: 1; } 50% { opacity: 0; } }
+
+    /* ─── STAT CARDS ─── */
+    .stat-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 20px 24px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: border-color 0.3s, transform 0.3s;
+    }
+    .stat-card:hover { border-color: rgba(99,102,241,0.4); transform: translateY(-4px); }
+    .stat-card::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 0%, rgba(99,102,241,0.06) 0%, transparent 70%);
+    }
+
+    /* ─── SECTION REVEAL ─── */
+    .reveal { opacity: 0; transform: translateY(32px); transition: opacity 0.6s ease, transform 0.6s ease; }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ─── SKILL PILL ─── */
+    .skill-pill {
+      background: rgba(99,102,241,0.1);
+      color: #a78bfa;
+      border: 1px solid rgba(99,102,241,0.2);
+      border-radius: 6px;
+      padding: 3px 10px;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.01em;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .skill-pill:hover { background: rgba(99,102,241,0.18); border-color: rgba(99,102,241,0.4); }
+
+    /* ─── SKILL CARD ─── */
+    .skill-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 20px;
+      transition: border-color 0.3s, background 0.3s, transform 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .skill-card:hover { border-color: rgba(99,102,241,0.35); background: rgba(99,102,241,0.05); transform: translateY(-3px); }
+    .skill-card-icon {
+      width: 36px; height: 36px;
+      border-radius: 10px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 16px; margin-bottom: 14px;
+    }
+
+    /* ─── TIMELINE ─── */
+    .timeline-dot {
+      width: 14px; height: 14px;
+      border-radius: 50%;
+      flex-shrink: 0;
+      margin-top: 5px;
+      position: relative; z-index: 2;
+    }
+    .timeline-dot.active { background: #6366f1; box-shadow: 0 0 0 4px rgba(99,102,241,0.2), 0 0 20px rgba(99,102,241,0.4); }
+    .timeline-dot.past { background: #3f3f46; }
+    .timeline-line { position: absolute; left: 6px; top: 14px; bottom: 0; width: 1px; background: linear-gradient(to bottom, rgba(99,102,241,0.5), rgba(99,102,241,0.1)); }
+
+    /* ─── EXPERIENCE CARD ─── */
+    .exp-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px; padding: 24px;
+      transition: border-color 0.3s;
+    }
+    .exp-card:hover { border-color: rgba(99,102,241,0.3); }
+    .exp-bullet { display: flex; gap: 10px; }
+    .exp-bullet-icon { color: #6366f1; flex-shrink: 0; margin-top: 2px; font-size: 12px; }
+
+    /* ─── PROJECT CARD ─── */
+    .project-card {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 20px; padding: 24px;
+      display: flex; flex-direction: column;
+      transition: border-color 0.3s, transform 0.3s, box-shadow 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .project-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, var(--card-c1, #6366f1), var(--card-c2, #a78bfa));
+      transform: scaleX(0); transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+    .project-card:hover::before { transform: scaleX(1); }
+    .project-card:hover { border-color: rgba(99,102,241,0.35); transform: translateY(-6px); box-shadow: 0 20px 60px rgba(0,0,0,0.5); }
+
+    /* ─── BADGE ─── */
+    .badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      font-size: 0.68rem; font-weight: 700;
+      padding: 3px 10px; border-radius: 100px;
+      letter-spacing: 0.04em; text-transform: uppercase;
+    }
+    .badge-live { background: rgba(34,197,94,0.12); color: #4ade80; border: 1px solid rgba(34,197,94,0.2); }
+    .badge-ai { background: rgba(167,139,250,0.12); color: #c4b5fd; border: 1px solid rgba(167,139,250,0.2); }
+    .badge-open { background: rgba(34,211,238,0.1); color: #67e8f9; border: 1px solid rgba(34,211,238,0.2); }
+
+    /* ─── GLOW BUTTON ─── */
+    .btn-primary {
+      background: linear-gradient(135deg, #6366f1, #7c3aed);
+      color: white;
+      border: none;
+      position: relative; overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-primary::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, #818cf8, #a78bfa);
+      opacity: 0; transition: opacity 0.2s;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 30px rgba(99,102,241,0.5); }
+    .btn-primary:hover::before { opacity: 1; }
+    .btn-primary span { position: relative; z-index: 1; }
+    .btn-ghost {
+      background: rgba(255,255,255,0.05);
+      color: #e4e4e7;
+      border: 1px solid rgba(255,255,255,0.1);
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .btn-ghost:hover { background: rgba(255,255,255,0.09); border-color: rgba(255,255,255,0.2); transform: translateY(-2px); }
+
+    /* ─── SECTION LABEL ─── */
+    .section-label {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.7rem; font-weight: 600;
+      color: #6366f1; letter-spacing: 0.12em; text-transform: uppercase;
+      display: flex; align-items: center; gap: 8px;
+    }
+    .section-label::before { content: '//'; color: #3f3f46; }
+
+    /* ─── CONTACT ─── */
+    .contact-link {
+      display: flex; align-items: center; gap: 10px;
+      padding: 14px 20px;
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 14px;
+      color: #a1a1aa; font-size: 0.875rem; font-weight: 500;
+      transition: all 0.2s; text-decoration: none;
+    }
+    .contact-link:hover { background: rgba(99,102,241,0.08); border-color: rgba(99,102,241,0.35); color: #fff; }
+    .contact-icon { width: 36px; height: 36px; border-radius: 10px; display: flex; align-items: center; justify-content: center; background: rgba(99,102,241,0.12); font-size: 16px; flex-shrink: 0; }
+
+    /* ─── SCROLLBAR ─── */
+    ::-webkit-scrollbar { width: 6px; }
+    ::-webkit-scrollbar-track { background: #09090b; }
+    ::-webkit-scrollbar-thumb { background: #27272a; border-radius: 3px; }
+    ::-webkit-scrollbar-thumb:hover { background: #3f3f46; }
+
+    /* ─── AVAILABILITY PILL ─── */
+    .avail-pill {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: rgba(34,197,94,0.07); color: #4ade80;
+      border: 1px solid rgba(34,197,94,0.2);
+      padding: 6px 16px; border-radius: 100px;
+      font-size: 0.75rem; font-weight: 600; letter-spacing: 0.02em;
+    }
+    .avail-dot { width: 7px; height: 7px; background: #4ade80; border-radius: 50%; animation: pulse-green 2s infinite; }
+    @keyframes pulse-green {
+      0%, 100% { box-shadow: 0 0 0 0 rgba(74,222,128,0.4); }
+      50% { box-shadow: 0 0 0 6px rgba(74,222,128,0); }
+    }
+
+    /* ─── NUMBER COUNTER ─── */
+    .count-up { display: inline-block; }
+
+    /* ─── FLOATING BADGE ─── */
+    .float-badge {
+      position: absolute;
+      background: rgba(9,9,11,0.9);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 10px;
+      padding: 10px 14px;
+      font-size: 11px;
+      backdrop-filter: blur(12px);
+      animation: floatBadge 4s ease-in-out infinite;
+      white-space: nowrap;
+    }
+    @keyframes floatBadge { 0%, 100% { transform: translateY(0px); } 50% { transform: translateY(-10px); } }
+  </style>
+</head>
+<body>
+
+  <!-- ─── AMBIENT ORBS ─── -->
+  <div class="orb orb-1"></div>
+  <div class="orb orb-2"></div>
+  <div class="orb orb-3"></div>
+
+  <!-- ─── NAV ─── -->
+  <nav>
+    <div class="nav-inner">
+      <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+        <span class="font-mono font-bold text-white tracking-tight">
+          <span class="text-accent">MP</span><span class="text-zinc-600">.</span>
+        </span>
+        <div class="hidden sm:flex gap-7 text-sm font-medium">
+          <a href="#about"      class="nav-link">About</a>
+          <a href="#skills"     class="nav-link">Skills</a>
+          <a href="#experience" class="nav-link">Experience</a>
+          <a href="#projects"   class="nav-link">Projects</a>
+          <a href="#contact"    class="nav-link">Contact</a>
+        </div>
+        <a href="#contact" class="text-xs font-bold btn-primary px-4 py-2 rounded-lg">
+          <span>Hire Me →</span>
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ─── HERO ─── -->
+  <section class="hero-section px-6 pt-20">
+    <div class="max-w-5xl mx-auto w-full z-10">
+      <div class="grid lg:grid-cols-2 gap-12 items-center">
+
+        <!-- Left: text -->
+        <div>
+          <div class="mb-6">
+            <span class="avail-pill">
+              <span class="avail-dot"></span>
+              Open to Roles · Chennai · Bangalore · Remote
+            </span>
+          </div>
+
+          <h1 class="text-5xl sm:text-6xl font-black leading-[1.05] tracking-tight mb-4 text-white">
+            Mahavishnu<br/>
+            <span class="grad-text">Ponnusamy</span>
+          </h1>
+
+          <p class="text-zinc-400 text-base leading-relaxed mb-8 max-w-lg">
+            Senior Full-Stack Engineer with <strong class="text-zinc-200">6+ years</strong> shipping production systems —
+            from real-time enforcement platforms to AI research tools.
+            I build things that <strong class="text-zinc-200">actually scale</strong>.
+          </p>
+
+          <!-- Typed role -->
+          <p class="font-mono text-sm text-zinc-500 mb-8 flex items-center gap-2">
+            <span class="text-accent">›</span>
+            <span id="typed" class="text-accent"></span><span class="cursor-blink"></span>
+          </p>
+
+          <!-- CTAs -->
+          <div class="flex flex-wrap gap-3">
+            <a href="./public/Mahavishnu_Ponnusamy_Senior_FullStack_Engineer_Resume.pdf" download
+               class="btn-primary flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold">
+              <span class="flex items-center gap-2">
+                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+                Laravel Resume
+              </span>
+            </a>
+            <a href="./public/Mahavishnu_Ponnusamy_AI_FullStack_Engineer_Resume.pdf" download
+               class="btn-ghost flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold">
+              <svg class="w-4 h-4 text-neon" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+              AI Resume
+            </a>
+            <a href="#contact"
+               class="btn-ghost flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold">
+              Let's Talk
+            </a>
+          </div>
+        </div>
+
+        <!-- Right: terminal window -->
+        <div class="terminal hidden lg:block">
+          <div class="terminal-bar">
+            <div class="dot dot-red"></div>
+            <div class="dot dot-yellow"></div>
+            <div class="dot dot-green"></div>
+            <span class="terminal-title">mahavishnu.json</span>
+          </div>
+          <div class="terminal-body text-zinc-400">
+            <div class="prompt-line mb-3">
+              <span class="prompt-sym mr-2">$</span>
+              <span class="prompt-cmd">cat mahavishnu.json</span>
+            </div>
+            <div class="text-zinc-600">{</div>
+            <div class="pl-4"><span class="out-key">"name"</span><span>: </span><span class="out-str">"Mahavishnu Ponnusamy"</span>,</div>
+            <div class="pl-4"><span class="out-key">"role"</span><span>: </span><span class="out-str">"Senior Full-Stack Engineer"</span>,</div>
+            <div class="pl-4"><span class="out-key">"experience"</span><span>: </span><span class="out-num">6</span><span class="out-comment"> // years</span>,</div>
+            <div class="pl-4"><span class="out-key">"location"</span><span>: </span><span class="out-str">"Salem, Tamil Nadu 🇮🇳"</span>,</div>
+            <div class="pl-4"><span class="out-key">"stack"</span><span>: [</span></div>
+            <div class="pl-8"><span class="out-str">"PHP/Laravel"</span>, <span class="out-str">"React.js"</span>, <span class="out-str">"FastAPI"</span>,</div>
+            <div class="pl-8"><span class="out-str">"LangGraph"</span>, <span class="out-str">"PostgreSQL"</span>, <span class="out-str">"RabbitMQ"</span></div>
+            <div class="pl-4">],</div>
+            <div class="pl-4"><span class="out-key">"monthly_users_served"</span><span>: </span><span class="out-num">25000</span>,</div>
+            <div class="pl-4"><span class="out-key">"records_per_sec"</span><span>: </span><span class="out-num">"10+"</span>,</div>
+            <div class="pl-4"><span class="out-key">"uptime"</span><span>: </span><span class="out-str">"99.9%"</span>,</div>
+            <div class="pl-4"><span class="out-key">"open_to_work"</span><span>: </span><span class="out-val">true</span></div>
+            <div class="text-zinc-600">}</div>
+            <div class="mt-3 prompt-line">
+              <span class="prompt-sym mr-2">$</span>
+              <span class="cursor-blink"></span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Stat cards -->
+      <div class="grid grid-cols-2 sm:grid-cols-4 gap-4 mt-16">
+        <div class="stat-card">
+          <p class="text-4xl font-black grad-text mb-1" id="c1">0</p>
+          <p class="text-xs text-zinc-500 font-medium">Years Production<br/>Experience</p>
+        </div>
+        <div class="stat-card">
+          <p class="text-4xl font-black grad-text mb-1" id="c2">0</p>
+          <p class="text-xs text-zinc-500 font-medium">Production<br/>Systems Shipped</p>
+        </div>
+        <div class="stat-card">
+          <p class="text-4xl font-black grad-text mb-1" id="c3">0</p>
+          <p class="text-xs text-zinc-500 font-medium">Monthly Users<br/>Served</p>
+        </div>
+        <div class="stat-card">
+          <p class="text-4xl font-black grad-text mb-1" id="c4">0</p>
+          <p class="text-xs text-zinc-500 font-medium">Records/sec<br/>Real-Time</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── ABOUT ─── -->
+  <section id="about" class="py-28 px-6 relative z-10">
+    <div class="max-w-3xl mx-auto reveal">
+      <div class="section-label mb-3">about</div>
+      <h2 class="text-4xl font-black text-white mb-10">Who I Am</h2>
+      <div class="space-y-5 text-zinc-400 text-base leading-relaxed">
+        <p>
+          I'm a <strong class="text-zinc-200">Senior Full-Stack Engineer</strong> based in Salem, Tamil Nadu — 6+ years building production systems that people actually rely on daily.
+        </p>
+        <p>
+          At <strong class="text-zinc-200">Hectadata India Technology Consulting</strong>, I architect platforms that process <strong class="text-zinc-200">lakhs of records daily (10+ rec/sec)</strong> via RabbitMQ + PostgreSQL NOTIFY pipelines, and built an AI legal research platform with LangGraph multi-agent orchestration reducing research latency by <strong class="text-zinc-200 font-mono">~40%</strong>.
+        </p>
+        <p>
+          At <strong class="text-zinc-200">Byrut Business Solutions</strong>, I scaled a multi-service tourism booking platform to <strong class="text-zinc-200">25,000+ monthly users</strong> across hotel, ferry, cab, and boat verticals — 20+ production apps in 4 years running at 99.9% uptime on AWS and DigitalOcean.
+        </p>
+        <p>
+          I care deeply about <strong class="text-zinc-200">clean layered architecture</strong>, defensible metrics, and code other engineers can actually extend — not just run once.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── SKILLS ─── -->
+  <section id="skills" class="py-28 px-6 relative z-10">
+    <div class="max-w-5xl mx-auto reveal">
+      <div class="section-label mb-3">skills</div>
+      <h2 class="text-4xl font-black text-white mb-12">Technical Stack</h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+
+        <div class="skill-card" style="--sk: rgba(99,102,241,0.05);">
+          <div class="skill-card-icon bg-indigo-500/10 text-indigo-400">λ</div>
+          <h3 class="font-bold text-zinc-200 text-sm mb-3">Languages & Core</h3>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-pill">PHP</span><span class="skill-pill">Python</span><span class="skill-pill">JavaScript</span><span class="skill-pill">TypeScript</span><span class="skill-pill">Bash</span><span class="skill-pill">SQL</span><span class="skill-pill">OOP</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-icon bg-violet-500/10 text-violet-400">⚙</div>
+          <h3 class="font-bold text-zinc-200 text-sm mb-3">Frameworks & UI</h3>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-pill">Laravel</span><span class="skill-pill">FastAPI</span><span class="skill-pill">React.js</span><span class="skill-pill">Next.js</span><span class="skill-pill">Inertia.js</span><span class="skill-pill">Tailwind CSS</span><span class="skill-pill">Livewire</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-icon bg-cyan-500/10 text-cyan-400">🗄</div>
+          <h3 class="font-bold text-zinc-200 text-sm mb-3">Databases & Cache</h3>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-pill">PostgreSQL</span><span class="skill-pill">MySQL</span><span class="skill-pill">Redis</span><span class="skill-pill">MongoDB</span><span class="skill-pill">Qdrant</span><span class="skill-pill">Pinecone</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-icon bg-sky-500/10 text-sky-400">☁</div>
+          <h3 class="font-bold text-zinc-200 text-sm mb-3">DevOps & Cloud</h3>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-pill">AWS (EC2, S3)</span><span class="skill-pill">DigitalOcean</span><span class="skill-pill">Docker</span><span class="skill-pill">Nginx</span><span class="skill-pill">Laravel Forge</span><span class="skill-pill">Linux</span><span class="skill-pill">CI/CD</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-icon bg-purple-500/10 text-purple-400">🤖</div>
+          <h3 class="font-bold text-zinc-200 text-sm mb-3">AI & Retrieval</h3>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-pill">LangChain</span><span class="skill-pill">LangGraph</span><span class="skill-pill">RAG</span><span class="skill-pill">OpenAI API</span><span class="skill-pill">Anthropic</span><span class="skill-pill">FastMCP</span><span class="skill-pill">OCR</span>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-card-icon bg-emerald-500/10 text-emerald-400">🧪</div>
+          <h3 class="font-bold text-zinc-200 text-sm mb-3">Tools & Protocols</h3>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-pill">RabbitMQ</span><span class="skill-pill">MinIO</span><span class="skill-pill">SOAP</span><span class="skill-pill">Socket.IO</span><span class="skill-pill">WhatsApp API</span><span class="skill-pill">Pest</span><span class="skill-pill">pytest</span>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── EXPERIENCE ─── -->
+  <section id="experience" class="py-28 px-6 relative z-10">
+    <div class="max-w-3xl mx-auto reveal">
+      <div class="section-label mb-3">experience</div>
+      <h2 class="text-4xl font-black text-white mb-12">Where I've Worked</h2>
+
+      <div class="relative">
+        <!-- Timeline line -->
+        <div class="timeline-line"></div>
+
+        <div class="space-y-10">
+
+          <!-- Job 1 -->
+          <div class="flex gap-6">
+            <div class="timeline-dot active mt-1"></div>
+            <div class="exp-card flex-1">
+              <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
+                <div>
+                  <h3 class="font-bold text-zinc-100 text-base leading-tight">Hectadata India Technology Consulting Pvt Ltd</h3>
+                  <p class="text-accent text-sm font-semibold mt-0.5">PHP Developer · Remote, Malaysia</p>
+                </div>
+                <span class="font-mono text-xs bg-indigo-500/10 text-indigo-400 border border-indigo-500/20 px-3 py-1 rounded-full whitespace-nowrap">Jul 2024 – Present</span>
+              </div>
+              <ul class="space-y-3 text-sm text-zinc-400 leading-relaxed">
+                <li class="exp-bullet">
+                  <span class="exp-bullet-icon">▸</span>
+                  <span>Architected a real-time vehicle enforcement platform (Laravel 12, React 19, RabbitMQ) processing <strong class="text-zinc-200">lakhs of records daily (10+ rec/sec)</strong> — 20-state workflow engine, SOAP registry integration, reducing audit time by <strong class="text-zinc-200">~60%</strong>.</span>
+                </li>
+                <li class="exp-bullet">
+                  <span class="exp-bullet-icon">▸</span>
+                  <span>Engineered dual-mode ingestion (RabbitMQ real-time + PostgreSQL NOTIFY fallback) ensuring <strong class="text-zinc-200">zero data loss</strong> across 5+ remote stations simultaneously.</span>
+                </li>
+                <li class="exp-bullet">
+                  <span class="exp-bullet-icon">▸</span>
+                  <span>Developed an AI legal research platform (FastAPI, LangGraph, Qdrant, Pinecone) with hybrid vector search — cutting research latency by <strong class="text-zinc-200">~40%</strong>.</span>
+                </li>
+                <li class="exp-bullet">
+                  <span class="exp-bullet-icon">▸</span>
+                  <span>Built a production WhatsApp chatbot (FastAPI + Meta Cloud API) automating <strong class="text-zinc-200">80%+ of loan FAQ inquiries</strong> with bilingual support and a React admin SPA.</span>
+                </li>
+                <li class="exp-bullet">
+                  <span class="exp-bullet-icon">▸</span>
+                  <span>Deployed distributed services across cloud and on-premises Linux servers with <strong class="text-zinc-200">Nginx load balancing</strong>, Docker, Supervisor — <strong class="text-zinc-200">99.9% uptime</strong>.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Job 2 -->
+          <div class="flex gap-6">
+            <div class="timeline-dot past mt-1"></div>
+            <div class="exp-card flex-1">
+              <div class="flex flex-wrap items-start justify-between gap-3 mb-4">
+                <div>
+                  <h3 class="font-bold text-zinc-100 text-base leading-tight">Byrut Business Solutions LLP</h3>
+                  <p class="text-zinc-400 text-sm font-semibold mt-0.5">Web Developer · Remote, Andaman</p>
+                </div>
+                <span class="font-mono text-xs bg-zinc-800 text-zinc-400 border border-zinc-700 px-3 py-1 rounded-full whitespace-nowrap">Nov 2020 – Jun 2024</span>
+              </div>
+              <ul class="space-y-3 text-sm text-zinc-400 leading-relaxed">
+                <li class="exp-bullet">
+                  <span class="exp-bullet-icon" style="color:#71717a;">▸</span>
+                  <span>Architected and scaled a multi-service tourism booking platform to <strong class="text-zinc-200">25,000+ monthly users</strong> (hotel, ferry, cab, boat) — Laravel, React.js, MySQL, hosted on AWS.</span>
+                </li>
+                <li class="exp-bullet">
+                  <span class="exp-bullet-icon" style="color:#71717a;">▸</span>
+                  <span>Built a tour package pricing engine and ferry booking system on <strong class="text-zinc-200">Laravel Cloud</strong> — integrated FPDF generating <strong class="text-zinc-200">1,000+ monthly client quotations</strong> and Razorpay payment gateway.</span>
+                </li>
+                <li class="exp-bullet">
+                  <span class="exp-bullet-icon" style="color:#71717a;">▸</span>
+                  <span>Delivered <strong class="text-zinc-200">20+ production web applications</strong> across tourism, e-commerce, and business automation over 4 years.</span>
+                </li>
+                <li class="exp-bullet">
+                  <span class="exp-bullet-icon" style="color:#71717a;">▸</span>
+                  <span>Deployed 20+ apps on DigitalOcean via Laravel Forge — Spaces storage, CDN delivery, supporting <strong class="text-zinc-200">30+ active vendors</strong>.</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── PROJECTS ─── -->
+  <section id="projects" class="py-28 px-6 relative z-10">
+    <div class="max-w-5xl mx-auto reveal">
+      <div class="section-label mb-3">projects</div>
+      <h2 class="text-4xl font-black text-white mb-12">Selected Projects</h2>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+
+        <!-- P1 -->
+        <div class="project-card" style="--card-c1: #6366f1; --card-c2: #22d3ee;">
+          <div class="flex items-center justify-between mb-5">
+            <span class="badge badge-live">● Live · Govt Platform</span>
+            <span class="font-mono text-xs text-zinc-600">2024–Present</span>
+          </div>
+          <h3 class="font-bold text-zinc-100 text-base mb-3">Real-Time Vehicle Enforcement Platform</h3>
+          <p class="text-sm text-zinc-400 leading-relaxed mb-5 flex-1">
+            High-throughput platform processing <strong class="text-zinc-300">lakhs of records daily (10+ rec/sec)</strong> via RabbitMQ. 20-state workflow engine, SOAP government registry API, dual-mode ingestion with <strong class="text-zinc-300">zero data loss</strong> across 5+ remote stations. Reduced audit workload by <strong class="text-zinc-300">~60%</strong>.
+          </p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-pill">Laravel 12</span><span class="skill-pill">React 19</span><span class="skill-pill">RabbitMQ</span><span class="skill-pill">PostgreSQL</span><span class="skill-pill">MinIO</span><span class="skill-pill">SOAP</span>
+          </div>
+        </div>
+
+        <!-- P2 -->
+        <div class="project-card" style="--card-c1: #a78bfa; --card-c2: #ec4899;">
+          <div class="flex items-center justify-between mb-5">
+            <span class="badge badge-ai">🤖 AI Product</span>
+            <span class="font-mono text-xs text-zinc-600">2024–Present</span>
+          </div>
+          <h3 class="font-bold text-zinc-100 text-base mb-3">AI Legal Research Platform</h3>
+          <p class="text-sm text-zinc-400 leading-relaxed mb-5 flex-1">
+            Multi-agent AI platform using <strong class="text-zinc-300">LangGraph orchestration</strong> with hybrid vector search (Pinecone dense + Qdrant BM25 sparse), multi-LLM routing across 5 providers, real-time Socket.IO chat, and FastMCP server. Reduced research latency by <strong class="text-zinc-300">~40%</strong>.
+          </p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-pill">FastAPI</span><span class="skill-pill">LangGraph</span><span class="skill-pill">Pinecone</span><span class="skill-pill">Qdrant</span><span class="skill-pill">Socket.IO</span><span class="skill-pill">FastMCP</span>
+          </div>
+        </div>
+
+        <!-- P3 -->
+        <div class="project-card" style="--card-c1: #22d3ee; --card-c2: #6366f1;">
+          <div class="flex items-center justify-between mb-5">
+            <span class="badge badge-live">● Live · Chatbot</span>
+            <span class="font-mono text-xs text-zinc-600">2024</span>
+          </div>
+          <h3 class="font-bold text-zinc-100 text-base mb-3">WhatsApp Loan Q&A Chatbot</h3>
+          <p class="text-sm text-zinc-400 leading-relaxed mb-5 flex-1">
+            Production bilingual chatbot for a financial cooperative — automates <strong class="text-zinc-300">80%+ of incoming loan FAQs</strong>, human escalation workflows, broadcast messaging, CSAT analytics, and a React admin SPA with full pytest coverage.
+          </p>
+          <div class="flex flex-wrap gap-1.5">
+            <span class="skill-pill">FastAPI</span><span class="skill-pill">WhatsApp API</span><span class="skill-pill">LangChain</span><span class="skill-pill">PostgreSQL</span><span class="skill-pill">React SPA</span><span class="skill-pill">pytest</span>
+          </div>
+        </div>
+
+        <!-- P4 -->
+        <div class="project-card" style="--card-c1: #22d3ee; --card-c2: #34d399;">
+          <div class="flex items-center justify-between mb-5">
+            <span class="badge badge-open">⬡ Open Source</span>
+            <span class="font-mono text-xs text-zinc-600">2024</span>
+          </div>
+          <h3 class="font-bold text-zinc-100 text-base mb-3">AI Semantic Search Engine</h3>
+          <p class="text-sm text-zinc-400 leading-relaxed mb-5 flex-1">
+            Enterprise hybrid search combining dense vector embeddings (Qdrant) + sparse BM25 retrieval, RAG-based citation responses, and multi-format OCR ingestion (DOCX/PDF/image) — delivering <strong class="text-zinc-300">sub-second query performance</strong>.
+          </p>
+          <div class="flex flex-wrap gap-1.5 mb-5">
+            <span class="skill-pill">FastAPI</span><span class="skill-pill">React</span><span class="skill-pill">Qdrant</span><span class="skill-pill">LangChain</span><span class="skill-pill">RAG</span><span class="skill-pill">OCR</span>
+          </div>
+          <a href="https://github.com/mahavishnup/ai-search-engine" target="_blank"
+             class="mt-auto text-xs font-bold text-cyan-400 hover:text-cyan-300 inline-flex items-center gap-1.5 transition-colors">
+            View on GitHub
+            <svg class="w-3 h-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2.5" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"/></svg>
+          </a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── EDUCATION & AWARDS ─── -->
+  <section id="education" class="py-28 px-6 relative z-10">
+    <div class="max-w-3xl mx-auto reveal">
+      <div class="section-label mb-3">background</div>
+      <h2 class="text-4xl font-black text-white mb-10">Education & Awards</h2>
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+        <div class="glass-light rounded-2xl p-6">
+          <div class="text-3xl mb-4">🎓</div>
+          <h3 class="font-bold text-zinc-100 text-sm mb-1">Paavai Engineering College</h3>
+          <p class="text-sm text-zinc-400">B.Tech — Information Technology</p>
+          <p class="text-sm font-bold text-accent mt-2 font-mono">CGPA: 7.75 / 10</p>
+          <p class="text-xs text-zinc-600 mt-1">Namakkal, Tamil Nadu · 2017 – 2021</p>
+        </div>
+        <div class="glass-light rounded-2xl p-6">
+          <div class="text-3xl mb-4">🏆</div>
+          <ul class="text-sm text-zinc-400 space-y-3">
+            <li class="flex gap-2">
+              <span class="text-amber-400 flex-shrink-0">▸</span>
+              <span><strong class="text-zinc-200">Research Publication</strong> — Blockchain-based invoice factoring & secure credit-based training</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-amber-400 flex-shrink-0">▸</span>
+              <span><strong class="text-zinc-200">2nd Place</strong> — National-level AI Technical Symposium</span>
+            </li>
+            <li class="flex gap-2">
+              <span class="text-amber-400 flex-shrink-0">▸</span>
+              <span><strong class="text-zinc-200">Smart India Hackathon 2020</strong> — National Finalist</span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── CONTACT ─── -->
+  <section id="contact" class="py-28 px-6 relative z-10">
+    <div class="max-w-2xl mx-auto reveal text-center">
+      <div class="section-label mb-3 justify-center">contact</div>
+      <h2 class="text-4xl font-black text-white mb-3">Let's Build Something</h2>
+      <p class="text-zinc-400 text-sm mb-12">
+        Open to Senior Full-Stack & AI Engineering roles<br/>
+        <span class="font-mono text-zinc-500">Chennai · Bangalore · Coimbatore · Remote India</span>
+      </p>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 mb-10">
+        <a href="mailto:selvamvishnu25@gmail.com" class="contact-link">
+          <div class="contact-icon">✉</div>
+          <div class="text-left">
+            <p class="text-xs text-zinc-600 font-mono">Email</p>
+            <p class="text-sm text-zinc-300 font-medium">selvamvishnu25@gmail.com</p>
+          </div>
+        </a>
+        <a href="https://linkedin.com/in/developermahavishnu" target="_blank" class="contact-link">
+          <div class="contact-icon">in</div>
+          <div class="text-left">
+            <p class="text-xs text-zinc-600 font-mono">LinkedIn</p>
+            <p class="text-sm text-zinc-300 font-medium">developermahavishnu</p>
+          </div>
+        </a>
+        <a href="https://github.com/mahavishnup" target="_blank" class="contact-link">
+          <div class="contact-icon" style="font-size:18px;">⌥</div>
+          <div class="text-left">
+            <p class="text-xs text-zinc-600 font-mono">GitHub</p>
+            <p class="text-sm text-zinc-300 font-medium">mahavishnup</p>
+          </div>
+        </a>
+        <a href="https://linktr.ee/Mahavishnup" target="_blank" class="contact-link">
+          <div class="contact-icon" style="font-size:16px;">🌿</div>
+          <div class="text-left">
+            <p class="text-xs text-zinc-600 font-mono">Linktree</p>
+            <p class="text-sm text-zinc-300 font-medium">Mahavishnup</p>
+          </div>
+        </a>
+      </div>
+
+      <div class="flex flex-wrap justify-center gap-3">
+        <a href="./public/Mahavishnu_Ponnusamy_Senior_FullStack_Engineer_Resume.pdf" download
+           class="btn-primary flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold">
+          <span class="flex items-center gap-2">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+            Download Resume
+          </span>
+        </a>
+        <a href="./public/Mahavishnu_Ponnusamy_AI_FullStack_Engineer_Resume.pdf" download
+           class="btn-ghost flex items-center gap-2 px-5 py-2.5 rounded-xl text-sm font-bold">
+          <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4"/></svg>
+          Download Resume
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ─── FOOTER ─── -->
+  <footer class="py-6 px-6 border-t border-zinc-900 text-center z-10 relative">
+    <p class="font-mono text-xs text-zinc-700">© 2024 Mahavishnu Ponnusamy · Salem, Tamil Nadu 🇮🇳</p>
+  </footer>
+
+  <!-- ─── JS ─── -->
+  <script>
+    // Scroll reveal
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+    }, { threshold: 0.08 });
+    document.querySelectorAll('.reveal').forEach(el => observer.observe(el));
+
+    // Typed text
+    const roles = [
+      'Senior Full-Stack Engineer',
+      'Laravel & PHP Specialist',
+      'React.js / TypeScript Dev',
+      'FastAPI / AI Platform Builder',
+    ];
+    let ri = 0, ci = 0, deleting = false;
+    const typedEl = document.getElementById('typed');
+    function type() {
+      const current = roles[ri];
+      if (!deleting) {
+        typedEl.textContent = current.slice(0, ++ci);
+        if (ci === current.length) { deleting = true; setTimeout(type, 2000); return; }
+      } else {
+        typedEl.textContent = current.slice(0, --ci);
+        if (ci === 0) { deleting = false; ri = (ri + 1) % roles.length; }
+      }
+      setTimeout(type, deleting ? 35 : 60);
+    }
+    type();
+
+    // Counter animation
+    function animateCount(elId, target, suffix, duration) {
+      const el = document.getElementById(elId);
+      if (!el) return;
+      const start = performance.now();
+      const update = (now) => {
+        const progress = Math.min((now - start) / duration, 1);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        el.textContent = Math.floor(eased * target) + suffix;
+        if (progress < 1) requestAnimationFrame(update);
+      };
+      requestAnimationFrame(update);
+    }
+    // Start counters when hero is visible
+    let countersStarted = false;
+    const heroObs = new IntersectionObserver((entries) => {
+      if (entries[0].isIntersecting && !countersStarted) {
+        countersStarted = true;
+        setTimeout(() => {
+          animateCount('c1', 6,   '+', 1200);
+          animateCount('c2', 20,  '+', 1400);
+          animateCount('c3', 25,  'K+', 1600);
+          animateCount('c4', 10,  '+', 1000);
+        }, 400);
+      }
+    }, { threshold: 0.1 });
+    heroObs.observe(document.querySelector('.hero-section'));
+
+    // Active nav highlight on scroll
+    const sections = document.querySelectorAll('section[id]');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const navObs = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          navLinks.forEach(l => l.style.color = '');
+          const active = document.querySelector(`.nav-link[href="#${e.target.id}"]`);
+          if (active) active.style.color = '#6366f1';
+        }
+      });
+    }, { threshold: 0.4 });
+    sections.forEach(s => navObs.observe(s));
+  </script>
+</body>
+</html>
